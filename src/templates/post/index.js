@@ -13,8 +13,6 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
   const heroSource = post.frontmatter.hero.childImageSharp.fluid.src
   const { previous, next } = pageContext
 
-  console.log(heroSource)
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
