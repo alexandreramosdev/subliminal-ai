@@ -1,14 +1,19 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from "../../components/bio"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+
+import { Hero, Title, Category } from './styles'
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
+  const heroSource = post.frontmatter.hero.childImageSharp.fluid.src
   const { previous, next } = pageContext
+
+  console.log(heroSource)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -17,14 +22,12 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
-        <header>
-          <h1>
+        <Hero bgHero={heroSource}>
+          <Category>Marketing</Category>
+          <Title>
             {post.frontmatter.title}
-          </h1>
-          <p>
-            {post.frontmatter.date}
-          </p>
-        </header>
+          </Title>
+        </Hero>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <footer>
@@ -71,6 +74,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        hero {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
       }
     }
   }
