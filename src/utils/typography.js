@@ -11,16 +11,8 @@ const options = {
     "Arial",
     "sans-serif",
   ],
-  bodyFontFamily: ["Roboto", "san-serif"],
-  overrideStyles: ({ rhythm, scale }, options) => {
-    return {
-      "@media only screen and (min-width: 600px)": {
-        fontSize: "16px"
-      }
-    }
-  }
+  bodyFontFamily: ["Roboto", "san-serif"]
 }
-
 
 const typography = new Typography(options)
 
