@@ -85,3 +85,10 @@ export const ContentPost = styled.section`
   margin: 0 auto;
   padding: 0 30px;
 `;
+
+export const WrapperDisqus = styled.div`
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;  
+  padding: 0 30px;
+`;

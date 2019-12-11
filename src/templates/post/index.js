@@ -1,17 +1,25 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
-import Bio from "../../components/bio"
+// import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-import { Hero, Title, Category, ContentPost } from './styles'
+import { Hero, Title, Category, ContentPost, WrapperDisqus } from './styles'
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
+  const siteUrl = data.site.siteMetadata.siteUrl
   const heroSource = post.frontmatter.hero.childImageSharp.fluid.src
   const { previous, next } = pageContext
+
+  const disqusConfig = {
+    url: `${siteUrl + location.pathname}`,
+    identifier: post.id,
+    title: post.title,
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -27,9 +35,13 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
           </Title>
         </Hero>
         <ContentPost dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
         <footer>
-          <Bio />
+          {/* <Bio /> */}
+          <WrapperDisqus>
+            <hr />
+            <Disqus config={disqusConfig} />
+
+          </WrapperDisqus>
         </footer>
       </article>
 
@@ -62,6 +74,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
