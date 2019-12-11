@@ -4,7 +4,7 @@ date: "2020-02-09"
 description: Any business oriented towards creating a top of the line customer experience needs a competent and comprehensive customer service department.
 author: Ghani Pradita
 authorAvatar: 
-hero: hero.png
+hero: ./hero.png
 ---
 
 Any business oriented towards creating a top of the line customer experience needs a competent and comprehensive customer service department. In the past, offering a reliable phone number with an informed customer service team was enough …
