@@ -10,7 +10,21 @@ export const Hero = styled.header`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;  
-  height: 847px;
+  
+  height: 165px;
+  padding: 0 45px;
+
+  @media (min-width: 600px) {
+    height: 250px;
+  }
+
+   @media (min-width: 900px) {
+    height: 500px;
+  }
+
+   @media (min-width: 1200px) {
+    height: 847px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -21,14 +35,30 @@ export const Title = styled.h1`
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   color: #ffffff;
 
-  font-size: 60px;
+  font-size: 15px;
+  line-height: 23px;
   font-weight: 700;
-  line-height: 90px;
+  margin-bottom: 0;
+
+   @media (min-width: 600px) {
+    font-size: 30px;
+    line-height:45px;
+  }
+
+   @media (min-width: 900px) {
+    font-size: 45px;
+    line-height: 60px;
+  }
+
+   @media (min-width: 1200px) {
+    font-size: 60px;
+    line-height: 90px;
+  }
 `;
 
-export const Category = styled.div`
-  width: 119px;
-  height: 36px;
+export const Category = styled.div` 
+  width: 80px;
+  height: 28px;
   border-radius: 18px;
   background-color: #ffffff;
 
@@ -38,4 +68,20 @@ export const Category = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-bottom: 18px;
+
+  font-size: 12px;
+
+   @media (min-width: 900px) {
+    width: 119px;
+    height: 36px;
+  }
+`;
+
+export const ContentPost = styled.section`
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 30px;
 `;

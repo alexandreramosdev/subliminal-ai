@@ -5,7 +5,7 @@ import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-import { Hero, Title, Category } from './styles'
+import { Hero, Title, Category, ContentPost } from './styles'
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
             {post.frontmatter.title}
           </Title>
         </Hero>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <ContentPost dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <footer>
           <Bio />

@@ -1,7 +1,7 @@
 import Typography from "typography"
 
-const typography = new Typography({
-  baseFontSize: "16px",
+const options = {
+  baseFontSize: "12px",
   baseLineHeight: 1.666,
   headerFontFamily: [
     "Lato",
@@ -12,7 +12,17 @@ const typography = new Typography({
     "sans-serif",
   ],
   bodyFontFamily: ["Roboto", "san-serif"],
-})
+  overrideStyles: ({ rhythm, scale }, options) => {
+    return {
+      "@media only screen and (min-width: 600px)": {
+        fontSize: "16px"
+      }
+    }
+  }
+}
+
+
+const typography = new Typography(options)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
