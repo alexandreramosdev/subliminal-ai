@@ -14,7 +14,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata.title
   const userTwitter = data.site.siteMetadata.social.twitter
   const heroSource = post.frontmatter.hero.childImageSharp.fluid.src
-  const { previous, next } = pageContext
+  // const { previous, next } = pageContext
 
   const disqusConfig = {
     url: `${siteUrl + location.pathname}`,
@@ -53,24 +53,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
         </Footer>
       </article>
 
-      <nav>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-                </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+
     </Layout>
   )
 }
