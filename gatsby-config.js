@@ -52,7 +52,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `teste-subliminial-ai`
+        shortname: `subliminal-ai`
       }
     },
     {
