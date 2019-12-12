@@ -86,9 +86,14 @@ export const ContentPost = styled.section`
   padding: 0 30px;
 `;
 
-export const WrapperDisqus = styled.div`
+export const Footer = styled.footer`
   width: 100%;
   max-width: 1040px;
   margin: 0 auto;  
   padding: 0 30px;
+`;
+
+export const Line = styled.hr`
+  background: #d6d7e2;
+  margin-bottom: 40px;
 `;

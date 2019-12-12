@@ -2,11 +2,11 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
-// import Bio from "../../components/bio"
+import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-import { Hero, Title, Category, ContentPost, WrapperDisqus } from './styles'
+import { Hero, Title, Category, ContentPost, Footer, Line } from './styles'
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
@@ -35,14 +35,12 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
           </Title>
         </Hero>
         <ContentPost dangerouslySetInnerHTML={{ __html: post.html }} />
-        <footer>
-          {/* <Bio /> */}
-          <WrapperDisqus>
-            <hr />
-            <Disqus config={disqusConfig} />
-
-          </WrapperDisqus>
-        </footer>
+        <Footer>
+          <Line />
+          <Bio />
+          <Line />
+          <Disqus config={disqusConfig} />
+        </Footer>
       </article>
 
       <nav>
