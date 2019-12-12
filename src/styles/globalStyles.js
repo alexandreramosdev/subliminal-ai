@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export default createGlobalStyle`
   body {
     font-size: 12px;
+    color: #353167;
 
      @media (min-width: 600px) {
       font-size: 16px;
@@ -16,6 +17,10 @@ export default createGlobalStyle`
       font-size: 20px;
       }
   } 
+
+  h1, h2, h3 ,h4, h5, h6 {
+    color: #1f256d;
+  }
 
   h1 { font-size: 1.912em; }
   h2 { font-size: 1.616em; }
