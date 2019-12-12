@@ -5,7 +5,7 @@ module.exports = {
     description: `Subliminal AI is a Machine Learning Consulting firm experienced in applying AI and Machine Learning to business problems.`,
     siteUrl: `http://preview-subliminal-ai.netliify.com`,
     social: {
-      twitter: `twitter`,
+      twitter: `alexandrer_stos`,
     },
   },
   plugins: [

@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
-import Bio from "../../components/bio"
+import { Bio, Share } from "../../components"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
@@ -10,8 +10,9 @@ import { Hero, Title, Category, ContentPost, Footer, Line } from './styles'
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
   const siteUrl = data.site.siteMetadata.siteUrl
+  const siteTitle = data.site.siteMetadata.title
+  const userTwitter = data.site.siteMetadata.social.twitter
   const heroSource = post.frontmatter.hero.childImageSharp.fluid.src
   const { previous, next } = pageContext
 
@@ -36,6 +37,15 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
         </Hero>
         <ContentPost dangerouslySetInnerHTML={{ __html: post.html }} />
         <Footer>
+          <Share
+            socialConfig={{
+              twitterHandle: `${userTwitter}`,
+              config: {
+                url: `${siteUrl + location.pathname}`,
+                title: `${post.title}`,
+              },
+            }}
+          />
           <Line />
           <Bio />
           <Line />
@@ -73,6 +83,9 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         siteUrl
+        social {
+          twitter
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
