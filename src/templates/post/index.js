@@ -1,12 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 
 import { Bio, Share } from "../../components"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-import { Hero, Title, Category, ContentPost, Footer, Line } from './styles'
+import { Hero, Title, Category, ContentPost, Footer, Line } from "./styles"
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
@@ -31,9 +31,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
       <article>
         <Hero bgHero={heroSource}>
           <Category>Marketing</Category>
-          <Title>
-            {post.frontmatter.title}
-          </Title>
+          <Title>{post.frontmatter.title}</Title>
         </Hero>
         <ContentPost dangerouslySetInnerHTML={{ __html: post.html }} />
         <Footer>
@@ -52,8 +50,6 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
           <Disqus config={disqusConfig} />
         </Footer>
       </article>
-
-
     </Layout>
   )
 }

@@ -1,13 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
 import {
   TwitterShareButton,
   FacebookShareButton,
   LinkedinShareButton,
-} from 'react-share';
+} from "react-share"
 
-import { Wrapper, Row, Title, Buttons, FacebookIcon, TwitterIcon, LinkedinIcon } from './styles';
+import {
+  Wrapper,
+  Row,
+  Title,
+  Buttons,
+  FacebookIcon,
+  TwitterIcon,
+  LinkedinIcon,
+} from "./styles"
 
 const Share = ({ socialConfig }) => (
   <Wrapper>
@@ -26,20 +34,21 @@ const Share = ({ socialConfig }) => (
           <TwitterIcon />
           <small>SHARE ON TWITTER</small>
         </TwitterShareButton>
-        <FacebookShareButton url={socialConfig.config.url} >
+        <FacebookShareButton url={socialConfig.config.url}>
           <FacebookIcon />
           <small>SHARE ON FACEBOOK</small>
         </FacebookShareButton>
         <LinkedinShareButton
           url={socialConfig.config.url}
-          title={socialConfig.config.title}>
+          title={socialConfig.config.title}
+        >
           <LinkedinIcon />
           <small>SHARE ON LINKEDIN</small>
         </LinkedinShareButton>
       </Buttons>
     </Row>
   </Wrapper>
-);
+)
 
 Share.propTypes = {
   socialConfig: PropTypes.shape({
@@ -50,9 +59,9 @@ Share.propTypes = {
     }),
   }).isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
-};
+}
 Share.defaultProps = {
   tags: [],
-};
+}
 
 export default Share

@@ -1,25 +1,25 @@
-import styled from 'styled-components';
-import { AiOutlineTwitter, AiFillFacebook } from 'react-icons/ai'
-import { FaLinkedinIn } from 'react-icons/fa'
+import styled from "styled-components"
+import { AiOutlineTwitter, AiFillFacebook } from "react-icons/ai"
+import { FaLinkedinIn } from "react-icons/fa"
 
 export const Wrapper = styled.div`
   padding: 50px 0;
-`;
+`
 export const Title = styled.p`
   margin-bottom: 30px;
   text-align: center;
   font-weight: 700;
-`;
+`
 
 export const Row = styled.div`
   text-align: center;
 
- @media (min-width: 900px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-`;
+  @media (min-width: 900px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`
 
 export const Buttons = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ export const Buttons = styled.div`
       display: inline;
     }
   }
-`;
+`
 
 export const FacebookIcon = styled(AiFillFacebook)`
   vertical-align: middle;

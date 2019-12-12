@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { InstagramIcon, Avatar, Row, Title } from './styles'
+import { InstagramIcon, Avatar, Row, Title } from "./styles"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -29,18 +29,20 @@ const Bio = () => {
     <>
       <Title>ABOUT THE AUTHOR</Title>
       <Row>
-        <Avatar
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author}
-        />
+        <Avatar fixed={data.avatar.childImageSharp.fixed} alt={author} />
         <div>
-          <h3>Emily Marsh  <InstagramIcon /></h3>
+          <h3>
+            Emily Marsh <InstagramIcon />
+          </h3>
           <p>
-            Emily is an Inbound Marketer for Iconosquare, based in the Limoges office. She loves all things social and revels in keeping on top of the social media marketing game by writing for the blog. She’s also a bit obsessed with sushi and Netflix.
+            Emily is an Inbound Marketer for Iconosquare, based in the Limoges
+            office. She loves all things social and revels in keeping on top of
+            the social media marketing game by writing for the blog. She’s also
+            a bit obsessed with sushi and Netflix.
           </p>
         </div>
       </Row>
-    </ >
+    </>
   )
 }
 

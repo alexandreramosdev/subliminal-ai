@@ -52,8 +52,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `subliminal-ai`
-      }
+        shortname: `subliminal-ai`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,

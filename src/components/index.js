@@ -1,2 +1,2 @@
-export { default as Bio } from './bio'
-export { default as Share } from './share'
+export { default as Bio } from "./bio"
+export { default as Share } from "./share"

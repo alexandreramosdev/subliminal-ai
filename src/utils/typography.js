@@ -11,7 +11,7 @@ const options = {
     "Arial",
     "sans-serif",
   ],
-  bodyFontFamily: ["Roboto", "san-serif"]
+  bodyFontFamily: ["Roboto", "san-serif"],
 }
 
 const typography = new Typography(options)
