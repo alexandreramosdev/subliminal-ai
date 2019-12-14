@@ -1,2 +1,6 @@
+export { default as SEO } from "./seo"
+export { default as Layout } from "./layout"
+export { default as Topbar } from "./topbar"
 export { default as Bio } from "./bio"
 export { default as Share } from "./share"
+export { default as Button } from "./button"
