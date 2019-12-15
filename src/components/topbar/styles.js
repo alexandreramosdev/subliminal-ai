@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   align-items: center;
 
    @media (min-width: 900px) {
-    padding: 0 0 0 25px; 
+    padding: 20px 0 20px 25px; 
   }
 `;
 

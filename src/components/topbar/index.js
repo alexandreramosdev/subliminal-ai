@@ -28,7 +28,7 @@ const Topbar = () => {
   const routes = [
     { to: "/#features", title: "Features" },
     { to: "/#resource", title: "Resource" },
-    { to: "/#blog", title: "Blog" },
+    { to: "/subliminal-ai", title: "Blog" },
     { to: "/#learn-more", title: "Learn More" },
   ];
 
