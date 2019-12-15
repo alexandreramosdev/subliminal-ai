@@ -1,8 +1,10 @@
 export { default as SEO } from "./seo"
 export { default as Layout } from "./layout"
 export { default as Topbar } from "./topbar"
+export { default as Button } from "./button"
+
 export { default as Bio } from "./bio"
 export { default as Share } from "./share"
-export { default as Button } from "./button"
-export { ButtonSmall } from "./button"
+
 export { default as Hero } from "./hero"
+export { default as Trusted } from "./trusted"
