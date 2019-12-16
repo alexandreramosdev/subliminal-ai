@@ -8,3 +8,4 @@ export { default as Share } from "./share"
 
 export { default as Hero } from "./hero"
 export { default as Trusted } from "./trusted"
+export { default as OpenSource } from "./openSource"
