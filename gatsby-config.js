@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Sibliminal Ai`,
+    title: `Subliminal Ai`,
     author: `Amlet sarkisian`,
     description: `Subliminal AI is a Machine Learning Consulting firm experienced in applying AI and Machine Learning to business problems.`,
     siteUrl: `http://preview-subliminal-ai.netliify.com`,
@@ -71,7 +71,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`,
+        icon: `src/assets/images/icon.svg`,
       },
     },
     `gatsby-plugin-offline`,
