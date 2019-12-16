@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Section = styled.section`
-& > div {
-  background: #171441;
-}
-`;
+  & > div {
+    background: #171441;
+  }
+`
 export const Title = styled.h2`
   font-weight: 300;
   text-transform: uppercase;
@@ -12,19 +12,19 @@ export const Title = styled.h2`
   width: 100%;
   max-width: 1320px;
   padding: 0 25px;
- 
+
   margin: 0 auto 34px;
   text-align: center;
 
   @media (min-width: 600px) {
-     text-align: left;
-     font-size: 18px;
+    text-align: left;
+    font-size: 18px;
   }
 
   @media (min-width: 600px) {
-     font-size: 20px;
+    font-size: 20px;
   }
-`;
+`
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -87,4 +87,4 @@ export const Anchor = styled.a`
       width: 17px;
     }
   }
-`;
+`

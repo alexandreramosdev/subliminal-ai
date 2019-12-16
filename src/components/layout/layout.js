@@ -1,7 +1,7 @@
 import React from "react"
 
-import Topbar from '../topbar'
-<Topbar />
+import Topbar from "../topbar"
+;<Topbar />
 import GlobalStyles from "../../styles/globalStyles"
 
 const Layout = ({ location, title, children }) => (
