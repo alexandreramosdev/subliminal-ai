@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Layout, SEO, Hero, Trusted, OpenSource } from "../components"
+import { Layout, SEO, Hero, Trusted, OpenSource, Solution } from "../components"
 
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -13,6 +13,7 @@ const Index = ({ data, location }) => {
       <Hero />
       <Trusted />
       <OpenSource />
+      <Solution />
     </Layout>
   )
 }
