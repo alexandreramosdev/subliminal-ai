@@ -1,10 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { useMediaQuery } from "react-responsive"
 
 import arrow from "../../assets/images/arrow.svg"
 
-import Button, { ButtonSmall } from "../button"
+import Button from "../button"
 import {
   Header,
   WrapperHeadline,
@@ -29,8 +28,6 @@ const Hero = () => {
     }
   `)
 
-  const isMobile = useMediaQuery({ query: "(min-width: 600px)" })
-
   return (
     <Header>
       <WrapperHeadline>
@@ -46,7 +43,7 @@ const Hero = () => {
         <Image fluid={data.image.childImageSharp.fluid} />
       </WrapperHeadline>
       <WrapperAction>
-        <Button small={!isMobile}>Schedule A Call</Button>
+        <Button responsive>Schedule A Call</Button>
         <Link href="#">
           Subliminal AI Extended <img src={arrow} alt="arrow" />
         </Link>
