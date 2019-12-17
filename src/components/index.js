@@ -1,6 +1,8 @@
 export { default as SEO } from "./seo"
-export { default as Layout } from "./layout"
 export { default as Topbar } from "./topbar"
+export { default as Layout } from "./layout"
+export { default as Footer } from "./footer"
+
 export { default as Button } from "./button"
 
 export { default as Bio } from "./bio"
