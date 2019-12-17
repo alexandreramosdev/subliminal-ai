@@ -41,6 +41,7 @@ export const Nav = styled.nav`
 
   @media (min-width: 900px) {
     position: initial;
+    height: 100%;
   }
 `
 
