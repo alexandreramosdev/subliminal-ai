@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { AiFillStar } from "react-icons/ai"
 import { Link } from "gatsby"
 
 export const Section = styled.section`
@@ -175,28 +174,9 @@ export const Name = styled.h5`
     font-size: 16px;
   }
 `
-export const Office = styled.p`
-  margin-bottom: 0;
-
-  @media (min-width: 600px) {
-    font-size: 16px;
-  }
-`
 export const DescriptionCard = styled.p`
   padding: 0 30px;
   @media (min-width: 600px) {
     font-size: 16px;
-  }
-`
-export const Stars = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-export const StarIcon = styled(AiFillStar)`
-  color: ${({ selected }) => (selected ? "#ffb12b" : "#bebcc8")};
-
-  &:nth-child(5) {
-    margin-right: 7px;
   }
 `
