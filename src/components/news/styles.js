@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import { AiFillStar } from "react-icons/ai"
+import { Link } from "gatsby"
 
 export const Section = styled.section`
-  background: url(${require("../../assets/images/wave.svg")}) right top / cover
-    no-repeat;
   padding: 50px 0;
+  background: #fdfdfd;
 
   @media (min-width: 600px) {
     padding: 75px 0;
@@ -39,6 +39,35 @@ export const Subtitle = styled.p`
   max-width: 734px;
   margin: 0 auto 20px;
 `
+export const LinkTo = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #2a84eb;
+  text-decoration: none;
+
+  & > img {
+    margin-bottom: 0;
+    margin-left: 10px;
+    transition: ease-in-out 300ms;
+    width: 20px;
+
+    @media (min-width: 600px) {
+      width: 30px;
+    }
+
+    @media (min-width: 900px) {
+      width: 39px;
+    }
+  }
+
+  &:hover {
+    & > img {
+      margin: 0 0 0 15px;
+    }
+  }
+`
 
 export const WrapperCarousel = styled.div`
   padding: 0 0 50px;
@@ -62,9 +91,36 @@ export const Card = styled.div`
 export const Content = styled.div`
   background: #fff;
   border-radius: 20px;
-  padding: 30px;
   box-shadow: 0 0 5px rgba(209, 211, 214, 0.2);
 `
+
+export const HeaderCard = styled.img``
+
+export const TitleCard = styled.h4`
+  padding: 0 30px;
+`
+
+export const Info = styled.div`
+  padding: 0 30px;
+  margin-bottom: 20px;
+`
+
+export const Tag = styled.span`
+  color: #2a84eb;
+  font-weight: 600;
+  margin-right: 7px;
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+`
+export const Time = styled.span`
+  color: #848e9e;
+  font-weight: 300;
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+`
+
 export const Controls = styled.div`
   display: none;
   margin-top: 40px;
@@ -99,24 +155,24 @@ export const Controls = styled.div`
 `
 export const Media = styled.div`
   display: flex;
+  align-items: center;
   margin-bottom: 15px;
+  padding: 0 30px 30px;
 `
 export const Avatar = styled.img`
   margin-bottom: 0;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 7px;
 `
-export const User = styled.div``
-
 export const Name = styled.h5`
   text-align: left;
   margin-bottom: 0;
 
   @media (min-width: 600px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `
 export const Office = styled.p`
@@ -127,6 +183,7 @@ export const Office = styled.p`
   }
 `
 export const DescriptionCard = styled.p`
+  padding: 0 30px;
   @media (min-width: 600px) {
     font-size: 16px;
   }

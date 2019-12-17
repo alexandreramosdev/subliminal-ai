@@ -1,9 +1,8 @@
 import React, { useRef } from "react"
-import TinySlider from "tiny-slider-react";
+import TinySlider from "tiny-slider-react"
 
-
-import avatar from '../../assets/images/avatar.png'
-import arrowLong from '../../assets/images/arrow-long.svg'
+import avatar from "../../assets/images/avatar.png"
+import arrowLong from "../../assets/images/arrow-long.svg"
 import {
   Section,
   Wrapper,
@@ -20,7 +19,7 @@ import {
   Stars,
   StarIcon,
   Content,
-  Controls
+  Controls,
 } from "./styles"
 
 const Testimonial = () => {
@@ -49,8 +48,8 @@ const Testimonial = () => {
       1200: {
         fixedWidth: 588,
         gutter: 10,
-      }
-    }
+      },
+    },
   }
 
   return (
@@ -64,18 +63,22 @@ const Testimonial = () => {
       <WrapperCarousel>
         <TinySlider settings={settings} ref={controlsRef}>
           <Card>
-            <Content >
+            <Content>
               <Media>
                 <Avatar src={avatar} />
-                <User >
-                  <Name >Jon Snow</Name>
-                  <Office>Founder & CEO <a href="#">@Tonquin</a></Office>
+                <User>
+                  <Name>Jon Snow</Name>
+                  <Office>
+                    Founder & CEO <a href="#">@Tonquin</a>
+                  </Office>
                 </User>
               </Media>
               <DescriptionCard>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            </DescriptionCard>
-              <Stars >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco
+              </DescriptionCard>
+              <Stars>
                 <StarIcon selected />
                 <StarIcon selected />
                 <StarIcon selected />
@@ -87,18 +90,22 @@ const Testimonial = () => {
           </Card>
 
           <Card>
-            <Content >
+            <Content>
               <Media>
                 <Avatar src={avatar} />
-                <User >
-                  <Name >Jon Snow</Name>
-                  <Office>Founder & CEO <a href="#">@Tonquin</a></Office>
+                <User>
+                  <Name>Jon Snow</Name>
+                  <Office>
+                    Founder & CEO <a href="#">@Tonquin</a>
+                  </Office>
                 </User>
               </Media>
               <DescriptionCard>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            </DescriptionCard>
-              <Stars >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco
+              </DescriptionCard>
+              <Stars>
                 <StarIcon selected />
                 <StarIcon selected />
                 <StarIcon selected />
@@ -110,18 +117,22 @@ const Testimonial = () => {
           </Card>
 
           <Card>
-            <Content >
+            <Content>
               <Media>
                 <Avatar src={avatar} />
-                <User >
-                  <Name >Jon Snow</Name>
-                  <Office>Founder & CEO <a href="#">@Tonquin</a></Office>
+                <User>
+                  <Name>Jon Snow</Name>
+                  <Office>
+                    Founder & CEO <a href="#">@Tonquin</a>
+                  </Office>
                 </User>
               </Media>
               <DescriptionCard>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            </DescriptionCard>
-              <Stars >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco
+              </DescriptionCard>
+              <Stars>
                 <StarIcon selected />
                 <StarIcon selected />
                 <StarIcon selected />
@@ -132,11 +143,14 @@ const Testimonial = () => {
             </Content>
           </Card>
         </TinySlider>
-        <Controls >
-          <button type="button" onClick={() => onGoTo('prev')}><img src={arrowLong} /></button>
-          <button type="button" onClick={() => onGoTo('next')}><img src={arrowLong} /></button>
+        <Controls>
+          <button type="button" onClick={() => onGoTo("prev")}>
+            <img src={arrowLong} />
+          </button>
+          <button type="button" onClick={() => onGoTo("next")}>
+            <img src={arrowLong} />
+          </button>
         </Controls>
-
       </WrapperCarousel>
     </Section>
   )
