@@ -26,17 +26,18 @@ export const Logo = styled(Img).attrs({
 `
 
 export const Nav = styled.nav`
-  position: absolute;
-  background: #ffffffdd;
+  position: fixed;
+  background: #fffffff8;
   top: ${({ isOpen }) => (isOpen ? 0 : "-100%")};
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   transition: 400ms ease-in-out;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 
   @media (min-width: 900px) {
     position: initial;
