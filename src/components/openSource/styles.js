@@ -57,7 +57,7 @@ export const Card = styled.div`
   color: #fff;
   width: 100%;
   max-width: 400px;
-  min-width: 300px;
+  min-width: 260px;
   padding: 10px calc(20px + 4vw) 40px;
   margin: auto;
   display: flex;
@@ -71,13 +71,13 @@ export const Card = styled.div`
 
   @media (min-width: 850px) {
     transform: ${({ translate }) =>
-      translate ? "translateY(70px)" : "translateY(0)"};
+    translate ? "translateY(70px)" : "translateY(0)"};
   }
 
   @media (min-width: 1400px) {
     max-width: 660px;
     transform: ${({ translate }) =>
-      translate ? "translateY(100px)" : "translateY(0)"};
+    translate ? "translateY(100px)" : "translateY(0)"};
   }
 `
 

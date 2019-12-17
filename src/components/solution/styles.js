@@ -99,7 +99,7 @@ export const Line = styled.hr`
 export const Image = styled(Img)`
   flex: 1;
   width: 100%;
-  min-width: 300px;
+  min-width: 260px;
 `
 export const TitleCard = styled.h5``
 export const DescriptionCard = styled.p`
