@@ -1,22 +1,20 @@
 import styled from "styled-components"
 
-import bgImageLeft from '../../assets/images/background-index-4.svg'
-import bgImageRight from '../../assets/images/background-index-5.svg'
+import bgImageLeft from "../../assets/images/background-index-4.svg"
+import bgImageRight from "../../assets/images/background-index-5.svg"
 
 export const Section = styled.section`
   padding: 50px 0;
-  background: 
-    url(${bgImageLeft}) top left / 70px no-repeat,
+  background: url(${bgImageLeft}) top left / 70px no-repeat,
     url(${bgImageRight}) bottom right / 70px no-repeat,
     linear-gradient(74deg, #005ec9 0%, #003eba 51%, #2a84eb 100%);
 
   @media (min-width: 600px) {
     padding: 75px 0;
 
-     background:
-    url(${bgImageLeft}) top left / 100px no-repeat,
-    url(${bgImageRight}) bottom right / 100px no-repeat,
-    linear-gradient(74deg, #005ec9 0%, #003eba 51%, #2a84eb 100%);
+    background: url(${bgImageLeft}) top left / 100px no-repeat,
+      url(${bgImageRight}) bottom right / 100px no-repeat,
+      linear-gradient(74deg, #005ec9 0%, #003eba 51%, #2a84eb 100%);
   }
 
   @media (min-width: 900px) {
@@ -43,9 +41,9 @@ export const Subtitle = styled.p`
 `
 
 export const WrapperButtons = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const LearnAboutLink = styled.a`
