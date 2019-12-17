@@ -2,7 +2,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 export const Header = styled.header`
-  padding: 50px 20px 70px;
+  padding: 50px 25px 70px;
 `
 
 export const WrapperHeadline = styled.div`
@@ -30,6 +30,7 @@ export const Headline = styled.div`
 
   @media (min-width: 900px) {
     max-width: 500px;
+    margin-right: 30px;
   }
 
   @media (min-width: 1200px) {
