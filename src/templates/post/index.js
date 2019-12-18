@@ -1,12 +1,18 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { Disqus, CommentCount } from "gatsby-plugin-disqus"
+import { FaRegBookmark, FaHeart } from "react-icons/fa";
+import { useMediaQuery } from 'react-responsive';
 
-import { Bio, Share } from "../../components"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
 
-import { Hero, Title, Category, ContentPost, Footer, Line } from "./styles"
+
+import {
+  Bio, Share, Layout, SEO, CallTo, News, Trusted
+} from "../../components"
+
+import {
+  Hero, Title, Category, ContentPost, Footer, Line, WrapperInfo, Info, InfoTitle, Media, Avatar, Name, SideShare
+} from "./styles"
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
@@ -14,12 +20,22 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata.title
   const userTwitter = data.site.siteMetadata.social.twitter
   const heroSource = post.frontmatter.hero.childImageSharp.fluid.src
+  const published = post.frontmatter.date
   // const { previous, next } = pageContext
+  const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" })
 
   const disqusConfig = {
     url: `${siteUrl + location.pathname}`,
     identifier: post.id,
     title: post.title,
+  }
+
+  const socialConfig = {
+    twitterHandle: `${userTwitter}`,
+    config: {
+      url: `${siteUrl + location.pathname}`,
+      title: `${post.title}`,
+    },
   }
 
   return (
@@ -32,17 +48,43 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
         <Hero bgHero={heroSource}>
           <Category>Marketing</Category>
           <Title>{post.frontmatter.title}</Title>
+
+          <WrapperInfo>
+            <SideShare>
+              <FaHeart />
+              <FaRegBookmark />
+              {isDesktop && <Share isAside socialConfig={socialConfig} />}
+            </SideShare>
+            <Info>
+              <InfoTitle>Author</InfoTitle>
+              <Media>
+                <Avatar src={require('../../assets/images/avatar.png')} />
+                <Name>By Ghani Pradita</Name>
+              </Media>
+            </Info>
+            <Info>
+              <InfoTitle>Published</InfoTitle>
+              <Media>
+                <Avatar icon src={require('../../assets/images/published.svg')} />
+                <Name>{published}</Name>
+              </Media>
+            </Info>
+            <Info>
+              <InfoTitle>Comments</InfoTitle>
+              <Media>
+                <Avatar icon src={require('../../assets/images/comments.svg')} />
+                <Name>
+                  <CommentCount config={disqusConfig} placeholder={'...'} />
+                </Name>
+              </Media>
+            </Info>
+
+          </WrapperInfo>
         </Hero>
         <ContentPost dangerouslySetInnerHTML={{ __html: post.html }} />
         <Footer>
           <Share
-            socialConfig={{
-              twitterHandle: `${userTwitter}`,
-              config: {
-                url: `${siteUrl + location.pathname}`,
-                title: `${post.title}`,
-              },
-            }}
+            socialConfig={socialConfig}
           />
           <Line />
           <Bio />
@@ -50,6 +92,9 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
           <Disqus config={disqusConfig} />
         </Footer>
       </article>
+      <News title="Read Similar Post" />
+      <Trusted post />
+      <CallTo />
     </Layout>
   )
 }
@@ -58,31 +103,31 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
+        site {
+        siteMetadata {
         title
         siteUrl
         social {
-          twitter
-        }
+        twitter
+      }
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
+    markdownRemark(fields: {slug: {eq: $slug } }) {
+        id
       excerpt(pruneLength: 160)
       html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
+    description
         hero {
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
-        }
+        childImageSharp {
+        fluid {
+        src
+      }
       }
     }
   }
+}
+}
 `

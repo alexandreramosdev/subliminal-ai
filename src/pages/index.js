@@ -25,7 +25,12 @@ const Index = ({ data, location }) => {
       <OpenSource />
       <Solution />
       <Testimonial />
-      <News />
+      <News
+        title="News & Announcements"
+        subtitle="See updates to help you with your work, and subscribe to our monthly
+          Subliminal AI newsletter to get the latest announcements sent directly
+          to your inbox."
+      />
       <CallTo />
     </Layout>
   )

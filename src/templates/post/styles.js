@@ -11,15 +11,15 @@ export const Hero = styled.header`
   background-size: cover;
   background-position: center;
 
-  height: 165px;
-  padding: 0 45px;
+  height: 250px;
+  /* padding: 0 45px; */
 
   @media (min-width: 600px) {
-    height: 250px;
+    height: 450px;
   }
 
   @media (min-width: 900px) {
-    height: 500px;
+    height: 600px;
   }
 
   @media (min-width: 1200px) {
@@ -31,6 +31,7 @@ export const Title = styled.h1`
   width: 100%;
   max-width: 1040px;
   text-align: center;
+  padding: 0 45px;
 
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   color: #ffffff;
@@ -70,6 +71,7 @@ export const Category = styled.div`
   align-items: center;
 
   margin-bottom: 18px;
+  margin-top: auto;
 
   font-size: 12px;
 
@@ -96,4 +98,85 @@ export const Footer = styled.footer`
 export const Line = styled.hr`
   background: #d6d7e2;
   margin-bottom: 40px;
+`
+
+export const WrapperInfo = styled.div`
+  background: #fff;
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -1px;
+  position: relative;
+
+  padding: 20px 30px;
+
+  @media (min-width: 600px) {
+    padding: 40px 30px;    
+  }
+
+  @media (min-width: 900px) {
+    padding: 50px 80px;    
+  }
+
+   @media (min-width: 1200px) {
+    max-width: 1250px;
+    padding: 50px 170px;    
+    border-radius: 30px 30px 0 0 ;
+  }
+
+`
+export const Info = styled.div``
+export const InfoTitle = styled.p`
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #353167;
+  text-transform: uppercase;
+  font-size: 8px;
+
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+`
+
+export const Media = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;  
+`
+
+export const Avatar = styled.img`
+  margin-bottom: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: ${({ icon }) => icon ? '0' : "50%"};
+  overflow: hidden;
+  margin-right: 4px;
+`
+export const Name = styled.p`
+  text-align: left;
+  margin-bottom: 0;
+  font-size: 8px;
+
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+`
+
+export const SideShare = styled.div`
+
+  & > * {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+   @media (min-width: 1200px) {
+    position: absolute;
+    top: 180px;
+    left: 60px;
+
+    & > * {   
+      margin-bottom: 25px;
+    }
+  }
 `

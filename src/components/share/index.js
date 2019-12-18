@@ -17,15 +17,19 @@ import {
   LinkedinIcon,
 } from "./styles"
 
-const Share = ({ socialConfig }) => (
+const Share = ({ socialConfig, isAside = false }) => (
   <Wrapper>
-    <Title>
-      Over to you! Do you invest in Instagram ads? <br />
-      Drop a comment below to let us know!
+    {!isAside && (
+      <Title>
+        Over to you! Do you invest in Instagram ads? <br />
+        Drop a comment below to let us know!
     </Title>
+    )}
     <Row>
-      <p style={{ marginBottom: 0, fontWeight: 700 }}>39 SHARES</p>
-      <Buttons>
+      {!isAside && (
+        <p style={{ marginBottom: 0, fontWeight: 700 }}>39 SHARES</p>
+      )}
+      <Buttons isAside={isAside}>
         <TwitterShareButton
           url={socialConfig.config.url}
           title={socialConfig.config.title}

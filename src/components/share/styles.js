@@ -22,20 +22,23 @@ export const Row = styled.div`
 `
 
 export const Buttons = styled.div`
-  display: flex;
+  display:  flex;
   justify-content: center;
   align-items: center;
+  flex-direction: ${({ isAside }) => isAside ? 'column' : 'row'};
 
   & > * {
-    padding: 0 7.5px;
+    padding: ${({ isAside }) => isAside ? '10px 0' : '0 7.5px'};
   }
 
   & small {
     display: none;
     vertical-align: bottom;
 
+
     @media (min-width: 600px) {
-      display: inline;
+      display: ${({ isAside }) => isAside ? 'none' : 'inline'};
+
     }
   }
 `

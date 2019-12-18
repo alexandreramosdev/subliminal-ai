@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export const Section = styled.section`
   padding: 50px 0;
-  background: #fdfdfd;
+  background: #f9fbff;
 
   @media (min-width: 600px) {
     padding: 75px 0;

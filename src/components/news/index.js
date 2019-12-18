@@ -25,7 +25,7 @@ import {
   Tag,
 } from "./styles"
 
-const News = () => {
+const News = ({ title, subtitle }) => {
   const controlsRef = useRef(null)
 
   const onGoTo = dir => controlsRef.current.slider.goTo(dir)
@@ -58,12 +58,12 @@ const News = () => {
   return (
     <Section>
       <Wrapper>
-        <Title>News & Announcements</Title>
-        <Subtitle>
-          See updates to help you with your work, and subscribe to our monthly
-          Subliminal AI newsletter to get the latest announcements sent directly
-          to your inbox.
-        </Subtitle>
+        <Title>{title}</Title>
+        {subtitle && (
+          <Subtitle>
+            {subtitle}
+          </Subtitle>
+        )}
         <LinkTo to="/blog">
           Explore Blog <img src={arrow} alt="..." />
         </LinkTo>
