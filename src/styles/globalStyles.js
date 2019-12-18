@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
+  html {
+    height: 100%;  
+    overflow-y: scroll; 
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
   body {
     font-size: 12px;
     color: #353167;
