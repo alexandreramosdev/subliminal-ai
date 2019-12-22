@@ -24,7 +24,7 @@ const Topbar = ({ location }) => {
 
   const handleClick = () => setIsOpen(!isOpen)
   const isMobile = useMediaQuery({ query: "(max-width: 900px)" })
-  const isContactPage = window !== undefined ? location.pathname === '/contact' : null
+  const isContactPage = typeof window !== undefined ? location.pathname === '/contact' : null
 
   const routes = [
     { to: "/#features", title: "Features" },
