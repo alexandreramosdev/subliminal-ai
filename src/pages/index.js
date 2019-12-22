@@ -16,7 +16,6 @@ import {
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   // const posts = data.allMarkdownRemark.edges
-  console.log('Index >', location)
 
   return (
     <Layout location={location} title={siteTitle}>

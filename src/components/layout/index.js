@@ -6,7 +6,6 @@ import Footer from "../footer"
 import GlobalStyles from "../../styles/globalStyles"
 
 const Layout = ({ location, title, children }) => {
-  console.log('LAYOUT >', location)
   return (
     <>
       <Topbar location={location} />

@@ -18,7 +18,6 @@ const Topbar = ({ location }) => {
       }
     }
   `)
-  console.log('TOPBAR >', location.pathname)
   const imageSource = data.logo.childImageSharp.fixed
 
   const [isOpen, setIsOpen] = useState(false)
