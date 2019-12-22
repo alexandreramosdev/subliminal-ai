@@ -93,7 +93,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
         </Footer>
       </article>
       <News title="Read Similar Post" />
-      <Trusted post />
+      <Trusted light />
       <CallTo />
     </Layout>
   )

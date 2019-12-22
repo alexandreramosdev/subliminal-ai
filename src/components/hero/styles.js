@@ -1,23 +1,40 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import Img from "gatsby-image"
 
 export const Header = styled.header`
   padding: 50px 25px 70px;
+
+  background-color: ${({ contact }) => contact ? '#fff6ef' : "#fff"};
+
+  @media (max-width: 600px) {
+    background: ${({ contact }) => contact
+    ? `#fff6ef url(${require('../../assets/images/cta-img2.svg')}) bottom right / 25% no-repeat;`
+    : ""};
+  }
+
 `
 
 export const WrapperHeadline = styled.div`
+    
   @media (min-width: 600px) {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 1320px;
     margin: auto;
+
+  background: ${({ contact }) => contact
+    ? `url(${require('../../assets/images/cta-img2.svg')}) bottom right no-repeat;`
+    : ""};
   }
 `
 
 export const Headline = styled.div`
-  text-align: center;
+  text-align:  ${({ contact }) => contact
+    ? `left`
+    : "center"};
   margin-bottom: 30px;
+
 
   @media (min-width: 600px) {
     max-width: 300px;
@@ -40,7 +57,9 @@ export const Headline = styled.div`
 
 export const Title = styled.h1`
   font-size: 25px;
-  line-height: 42px;
+  line-height:  ${({ contact }) => contact
+    ? `35px`
+    : "42px"};
 
   @media (min-width: 600px) {
     font-size: 36px;
@@ -85,14 +104,25 @@ export const Image = styled(Img).attrs({
   z-index: 900;
   margin-bottom: 50px;
 
+  ${({ contact }) => contact && css`
+    display: none;  
+  `}
+
   @media (min-width: 600px) {
-    flex: 1;
+    display: block;
+    width: 455px;
+  }
+  @media (min-width: 900px) {
+    /* flex: 1; */
+    width: 600px;
   }
 `
 
 export const WrapperAction = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content:  ${({ contact }) => contact
+    ? `flex-start`
+    : "center"};
   align-items: center;
 
   @media (min-width: 600px) {
@@ -102,8 +132,11 @@ export const WrapperAction = styled.div`
   @media (min-width: 900px) {
     width: 100%;
     max-width: 1320px;
-    margin: auto;
-  }
+    margin: ${({ contact }) => contact
+    ? `-58px auto auto`
+    : "-29px auto auto"};
+  };
+
 
   & > * {
     margin: 0 20px;

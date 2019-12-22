@@ -2,11 +2,16 @@ import styled from "styled-components"
 import { Link as LinkGatsby } from "gatsby"
 import Img from "gatsby-image"
 
+export const Container = styled.div`
+  background-color: ${({ isContactPage }) => isContactPage ? '#fff6ef' : "#fff"};
+`
+
 export const Wrapper = styled.div`
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
   padding: 20px 25px;
+  background-color: ${({ isContactPage }) => isContactPage ? '#fff6ef' : "#fff"};
 
   display: flex;
   justify-content: space-between;
@@ -27,7 +32,7 @@ export const Logo = styled(Img).attrs({
 
 export const Nav = styled.nav`
   position: fixed;
-  background: #fffffff8;
+  background-color: ${({ isContactPage }) => isContactPage ? '#fff6eff8' : "#fffffff8"};
   top: ${({ isOpen }) => (isOpen ? 0 : "-100%")};
   left: 0;
   width: 100%;

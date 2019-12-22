@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Section = styled.section`
   padding: 50px 0;
   & > div {
-    background:  ${({ isPostPage }) => isPostPage ? '#fff' : ' #171441'};
+    background:  ${({ isLight }) => isLight ? '#fff' : ' #171441'};
   }
 `
 export const Title = styled.h2`
@@ -18,7 +18,7 @@ export const Title = styled.h2`
   text-align: center;
 
   @media (min-width: 600px) {
-    text-align: ${({ isPostPage }) => isPostPage ? 'center' : 'left'};
+    text-align: ${({ isLight }) => isLight ? 'center' : 'left'};
     font-size: 18px;
   }
 
@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content:  ${({ isPostPage }) => isPostPage ? 'center' : 'space-between'} ;
+  justify-content:  ${({ isLight }) => isLight ? 'center' : 'space-between'} ;
   padding: 10px 25px;
   
 `

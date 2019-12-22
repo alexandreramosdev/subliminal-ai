@@ -15,7 +15,7 @@ import {
   Link,
 } from "./styles"
 
-const Hero = () => {
+const Hero = ({ contact = false, title, subTitle }) => {
   const data = useStaticQuery(graphql`
     query {
       image: file(absolutePath: { regex: "/subliminal-hero.png/" }) {
@@ -25,30 +25,34 @@ const Hero = () => {
           }
         }
       }
+      heroContact: file(absolutePath: { regex: "/hero-contact.png/" }) {
+        childImageSharp {
+          fluid(maxWidth: 455, maxHeight: 552) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
+  // const imageHero = 
+
   return (
-    <Header>
-      <WrapperHeadline>
-        <Headline>
-          <Title>
-            Transform your <br /> business with Artificial Intelligence
-          </Title>
-          <SubTitle>
-            Subliminal AI is a Machine Learning Consulting firm experienced in
-            applying AI and Machine Learning to business problems.
-          </SubTitle>
+    <Header contact={contact}>
+      <WrapperHeadline contact={contact}>
+        <Headline contact={contact}>
+          <Title contact={contact}>{title} </Title>
+          <SubTitle>{subTitle}</SubTitle>
         </Headline>
-        <Image fluid={data.image.childImageSharp.fluid} />
+        <Image contact={contact} fluid={contact ? data.heroContact.childImageSharp.fluid : data.image.childImageSharp.fluid} />
       </WrapperHeadline>
-      <WrapperAction>
-        <Button responsive>Schedule A Call</Button>
+      <WrapperAction contact={contact}>
+        <Button responsive bgShadow={contact ? "#fff6ef " : "#fff"}>Schedule A Call</Button>
         <Link href="#">
           Subliminal AI Extended <img src={arrow} alt="arrow" />
         </Link>
       </WrapperAction>
-    </Header>
+    </Header >
   )
 }
 

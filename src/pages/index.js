@@ -16,11 +16,16 @@ import {
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   // const posts = data.allMarkdownRemark.edges
+  console.log('Index >', location)
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
-      <Hero />
+      <Hero
+        title="Transform your business with Artificial Intelligence"
+        subTitle=" Subliminal AI is a Machine Learning Consulting firm experienced in
+            applying AI and Machine Learning to business problems."
+      />
       <Trusted />
       <OpenSource />
       <Solution />

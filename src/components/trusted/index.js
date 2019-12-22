@@ -5,14 +5,14 @@ import companies from "../../assets/images/trusted.png"
 import companiesWhite from "../../assets/images/trusted-white.png"
 import { Section, Wrapper, Image, Anchor, Title } from "./styles"
 
-const Trusted = ({ post = false }) => {
+const Trusted = ({ light = false }) => {
   return (
-    <Section isPostPage={post}>
-      <Title isPostPage={post}>TRUSTED BY THE WORLD’S LEADING BRANDS</Title>
+    <Section isLight={light}>
+      <Title isLight={light}>TRUSTED BY THE WORLD’S LEADING BRANDS</Title>
       <div>
-        <Wrapper isPostPage={post}>
-          <Image src={post ? companiesWhite : companies} alt="companies" />
-          {!post && (
+        <Wrapper isLight={light}>
+          <Image src={light ? companiesWhite : companies} alt="companies" />
+          {!light && (
             <Anchor href="#">
               Scroll Down <img src={mouse} alt="scroll down" />
             </Anchor>

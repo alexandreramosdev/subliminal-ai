@@ -4,9 +4,9 @@ import { useMediaQuery } from "react-responsive"
 
 import Button from "../button"
 import HamburguerButton from "./hamburguerButton"
-import { Wrapper, Logo, Nav, List, Item, Link } from "./styles"
+import { Wrapper, Logo, Nav, List, Item, Link, Container } from "./styles"
 
-const Topbar = () => {
+const Topbar = ({ location }) => {
   const data = useStaticQuery(graphql`
     query Topbar {
       logo: file(absolutePath: { regex: "/logo-subliminal.png/" }) {
@@ -18,12 +18,14 @@ const Topbar = () => {
       }
     }
   `)
+  console.log('TOPBAR >', location.pathname)
   const imageSource = data.logo.childImageSharp.fixed
 
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = () => setIsOpen(!isOpen)
   const isMobile = useMediaQuery({ query: "(max-width: 900px)" })
+  const isContactPage = location.pathname === '/contact'
 
   const routes = [
     { to: "/#features", title: "Features" },
@@ -33,31 +35,33 @@ const Topbar = () => {
   ]
 
   return (
-    <Wrapper>
-      <Link to="/">
-        <Logo fixed={imageSource} />
-      </Link>
+    <Container isContactPage={isContactPage}>
+      <Wrapper isContactPage={isContactPage}>
+        <Link to="/">
+          <Logo fixed={imageSource} />
+        </Link>
 
-      {isMobile && <HamburguerButton setIsOpen={setIsOpen} isOpen={isOpen} />}
+        {isMobile && <HamburguerButton setIsOpen={setIsOpen} isOpen={isOpen} />}
 
-      <Nav isOpen={isOpen}>
-        <List>
-          {routes.map(({ to, title }) => (
-            <Item key={to}>
-              <Link to={to} onClick={isMobile ? handleClick : null}>
-                {title}
-              </Link>
-            </Item>
-          ))}
+        <Nav isOpen={isOpen} isContactPage={isContactPage}>
+          <List>
+            {routes.map(({ to, title }) => (
+              <Item key={to}>
+                <Link to={to} onClick={isMobile ? handleClick : null}>
+                  {title}
+                </Link>
+              </Item>
+            ))}
 
-          <Item>
-            <Button onClick={isMobile ? handleClick : null}>
-              Schedule A Call
+            <Item>
+              <Button onClick={isMobile ? handleClick : null} bgShadow={isContactPage ? "#fff6ef " : "#fff"} >
+                Schedule A Call
             </Button>
-          </Item>
-        </List>
-      </Nav>
-    </Wrapper>
+            </Item>
+          </List>
+        </Nav>
+      </Wrapper>
+    </Container>
   )
 }
 
