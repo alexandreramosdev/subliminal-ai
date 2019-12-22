@@ -35,8 +35,6 @@ const Hero = ({ contact = false, title, subTitle }) => {
     }
   `)
 
-  // const imageHero = 
-
   return (
     <Header contact={contact}>
       <WrapperHeadline contact={contact}>
@@ -44,7 +42,12 @@ const Hero = ({ contact = false, title, subTitle }) => {
           <Title contact={contact}>{title} </Title>
           <SubTitle>{subTitle}</SubTitle>
         </Headline>
-        <Image contact={contact} fluid={contact ? data.heroContact.childImageSharp.fluid : data.image.childImageSharp.fluid} />
+        <Image
+          contact={contact}
+          fluid={contact
+            ? data.heroContact.childImageSharp.fluid
+            : data.image.childImageSharp.fluid}
+        />
       </WrapperHeadline>
       <WrapperAction contact={contact}>
         <Button responsive bgShadow={contact ? "#fff6ef " : "#fff"}>Schedule A Call</Button>
