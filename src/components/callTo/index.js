@@ -11,29 +11,24 @@ import {
 } from "./styles"
 
 import arrow from "../../assets/images/right-arrow-white.png"
+import arrowBlue from "../../assets/images/arrow.svg"
 
-const CallTo = () => {
+const CallTo = ({ title, subtitle, isContactPage, linkTitle }) => {
   return (
-    <Section>
+    <Section isContactPage={isContactPage}>
       <Wrapper>
-        <Title>
-          Got A Project Idea? <br /> let’s Have A Quick, 15-minute Call To
-        </Title>
-        <Subtitle>
-          Find out how Data Science Consulting can help your business. Estimate
-          the time and budget needed to develop a solution. Learn more about our
-          expertise and capabilities.
-        </Subtitle>
+        <Title isContactPage={isContactPage}>{title}</Title>
+        <Subtitle isContactPage={isContactPage}>{subtitle}</Subtitle>
         <WrapperButtons>
-          <Button responsive bgShadow="#003eba">
+          <Button responsive bgShadow={isContactPage ? '#fff' : '#003eba'}>
             Schedule A Call
           </Button>
-          <LearnAboutLink>
-            Learn About The Process <img src={arrow} alt="..." />
+          <LearnAboutLink isContactPage={isContactPage}>
+            {linkTitle} <img src={isContactPage ? arrowBlue : arrow} alt="..." />
           </LearnAboutLink>
         </WrapperButtons>
       </Wrapper>
-    </Section>
+    </Section >
   )
 }
 
