@@ -5,7 +5,7 @@ import { Layout, SEO, Trusted, Hero } from '../../components'
 // import { Container } from './styles';
 
 const Contact = ({ location }) => (
-  <Layout location={location}>
+  <Layout isContactPage location={location}>
     <SEO title="Contact" />
     <Hero
       contact

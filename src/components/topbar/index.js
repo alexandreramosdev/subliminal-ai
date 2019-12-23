@@ -6,7 +6,7 @@ import Button from "../button"
 import HamburguerButton from "./hamburguerButton"
 import { Wrapper, Logo, Nav, List, Item, Link, Container } from "./styles"
 
-const Topbar = ({ location }) => {
+const Topbar = ({ isContactPage, location }) => {
   const data = useStaticQuery(graphql`
     query Topbar {
       logo: file(absolutePath: { regex: "/logo-subliminal.png/" }) {
@@ -24,7 +24,6 @@ const Topbar = ({ location }) => {
 
   const handleClick = () => setIsOpen(!isOpen)
   const isMobile = useMediaQuery({ query: "(max-width: 900px)" })
-  const isContactPage = typeof window !== 'undefined' ? location.pathname === '/contact' : null
 
   const routes = [
     { to: "/#features", title: "Features" },

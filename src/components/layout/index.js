@@ -5,10 +5,10 @@ import Footer from "../footer"
 
 import GlobalStyles from "../../styles/globalStyles"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ isContactPage, location, title, children }) => {
   return (
     <>
-      <Topbar location={location} />
+      <Topbar isContactPage={isContactPage} location={location} />
       <main>{children}</main>
       <Footer />
       <GlobalStyles />
