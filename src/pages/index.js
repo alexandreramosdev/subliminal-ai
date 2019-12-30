@@ -19,6 +19,7 @@ const Index = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
+      
       <SEO title="Home" />
       <Hero
         title="Transform your business with Artificial Intelligence"

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Layout, SEO, Trusted, Hero, CallTo } from '../../components'
+import WorkTogether from './workTogether'
 
 // import { Container } from './styles';
 
@@ -19,6 +20,7 @@ const Contact = ({ location }) => (
       subtitle="Have a project in mind? Or just curious about AI? Let’s connect to discuss your needs and determine if AI is a fit for your use case."
       linkTitle="Chat with us"
     />
+    <WorkTogether />
     <Trusted light />
   </Layout>
 )
