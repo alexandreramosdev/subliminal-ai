@@ -69,7 +69,7 @@ const Testimonial = () => {
                 <User>
                   <Name>Jon Snow</Name>
                   <Office>
-                    Founder & CEO <a href="#">@Tonquin</a>
+                    Founder & CEO <a href="/#">@Tonquin</a>
                   </Office>
                 </User>
               </Media>
@@ -96,7 +96,7 @@ const Testimonial = () => {
                 <User>
                   <Name>Jon Snow</Name>
                   <Office>
-                    Founder & CEO <a href="#">@Tonquin</a>
+                    Founder & CEO <a href="/#">@Tonquin</a>
                   </Office>
                 </User>
               </Media>
@@ -123,7 +123,7 @@ const Testimonial = () => {
                 <User>
                   <Name>Jon Snow</Name>
                   <Office>
-                    Founder & CEO <a href="#">@Tonquin</a>
+                    Founder & CEO <a href="/#">@Tonquin</a>
                   </Office>
                 </User>
               </Media>

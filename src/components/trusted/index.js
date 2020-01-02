@@ -13,7 +13,7 @@ const Trusted = ({ light = false }) => {
         <Wrapper isLight={light}>
           <Image src={light ? companiesWhite : companies} alt="companies" />
           {!light && (
-            <Anchor href="#">
+            <Anchor href="/#">
               Scroll Down <img src={mouse} alt="scroll down" />
             </Anchor>
           )}

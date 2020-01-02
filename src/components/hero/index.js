@@ -51,7 +51,7 @@ const Hero = ({ contact = false, title, subTitle }) => {
       </WrapperHeadline>
       <WrapperAction contact={contact}>
         <Button responsive bgShadow={contact ? "#fff6ef " : "#fff"}>Schedule A Call</Button>
-        <Link href="#">
+        <Link href="/#">
           Subliminal AI Extended <img src={arrow} alt="arrow" />
         </Link>
       </WrapperAction>

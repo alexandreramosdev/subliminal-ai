@@ -60,7 +60,7 @@ const OpenSource = () => {
           Training,Validating, And Deploying Models In Large Production
           Environments.
         </Subtitle>
-        <Play href="#">
+        <Play href="/#">
           <PlayIcon /> WATCH THE FILM
         </Play>
       </WrapperHeader>
@@ -72,7 +72,7 @@ const OpenSource = () => {
             Subliminal AI specializes in creating structured knowledge from
             unstructured text.
           </DescriptionCard>
-          <ActionCard href="#">
+          <ActionCard href="/#">
             See Cases <img src={arrow} alt="arrow right" />
           </ActionCard>
         </Card>
@@ -83,7 +83,7 @@ const OpenSource = () => {
             Does your company have a lot of images or videos? Turn that raw
             media into structured
           </DescriptionCard>
-          <ActionCard href="#">
+          <ActionCard href="/#">
             See Cases <img src={arrow} alt="arrow right" />
           </ActionCard>
         </Card>
@@ -94,7 +94,7 @@ const OpenSource = () => {
             Whatever form your data is in, we can work with you to clean,
             augment, and analyze it to
           </DescriptionCard>
-          <ActionCard href="#">
+          <ActionCard href="/#">
             See Cases <img src={arrow} alt="arrow right" />
           </ActionCard>
         </Card>
@@ -105,7 +105,7 @@ const OpenSource = () => {
             A Machine Learning model is only useful if you can actually
             integrate it into your product.
           </DescriptionCard>
-          <ActionCard href="#">
+          <ActionCard href="/#">
             See Cases <img src={arrow} alt="arrow right" />
           </ActionCard>
         </Card>
