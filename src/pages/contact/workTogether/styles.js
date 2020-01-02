@@ -40,7 +40,8 @@ export const Title = styled.h2`
   margin: 0 auto 40px;
   color: #fff;
 `
-export const Subtitle = styled.p`
+export const Subtitle = styled.span`
+  display: block;
   width: 100%;
   max-width: 734px;
   margin: 0 auto 40px;
