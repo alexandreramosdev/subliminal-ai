@@ -20,8 +20,8 @@ export const Row = styled.div`
 `;
 
 export const Col = styled.div`
-  @media (max-width: 780px) {
-    &:not(:last-child) {
+  @media (max-width: 780px) {    
+    &:first-child {
       margin-bottom: 30px;
     }
     }    
