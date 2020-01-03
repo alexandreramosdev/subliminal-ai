@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Layout, SEO, Trusted, Hero, CallTo } from '../../components'
-import WorkTogether from './workTogether'
-// import DontLikeForm from './dontLikeForm'
-import LetsTalk from './letsTalk'
+import WorkTogether from '../../components/workTogether'
+import DontLikeForm from '../../dontLikeForm'
+import LetsTalk from '../../components/letsTalk'
 
 // import { Container } from './styles';
 
@@ -25,7 +25,7 @@ const Contact = ({ location }) => (
     />
 
     <WorkTogether />
-    {/* <DontLikeForm /> */}
+    <DontLikeForm />
     <Trusted light />
   </Layout>
 )
