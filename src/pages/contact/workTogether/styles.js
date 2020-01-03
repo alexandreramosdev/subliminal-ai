@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import AutosizeInput from 'react-input-autosize';
 
 import bgImageLeft from "../../../assets/images/cta-img1.svg"
 import bgImageLeftB from "../../../assets/images/cta-img5.svg"
