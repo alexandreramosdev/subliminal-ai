@@ -78,12 +78,19 @@ export const LearnAboutLink = styled.a`
   }
 `
 
-export const Input = styled(AutosizeInput)`
+export const Input = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: solid #fff 1px;
   color: #fff;
-  /* width: 200px; */
+  width: 160px;
+
+  &:first-child {
+    width: 110px;
+  }
+  &:last-child {
+    width: 150px;
+  }
 
   &::placeholder {
     color: #fff;
