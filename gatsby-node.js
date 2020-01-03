@@ -75,9 +75,5 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         ],
       },
     })
-  } else {
-    actions.setWebpackConfig({
-      devtool: 'eval-source-map',
-    })
   }
 }

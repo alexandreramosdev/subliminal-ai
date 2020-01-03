@@ -4,38 +4,20 @@ import ButtonStl from '../button'
 
 export const Header = styled.header`
   padding: 50px 25px 70px;
-  /* padding: ${({ contact }) => contact ? "50px 25px 0" : "50px 25px 70px"}; */
-
   background-color: ${({ contact }) => contact ? '#fff6ef' : "#fff"};
-
-  /* 
-  @media (max-width: 600px) {
-    background: ${({ contact }) => contact
-    ? `#fff6ef url(${require('../../assets/images/cta-img2.svg')}) bottom right / 25% no-repeat;`
-    : ""};
-  } 
-  */
 
   @media (max-width: 780px) {
     padding: ${({ contact }) => contact ? "50px 25px 20px" : "50px 25px 70px"};
   }
-
 `
 
-export const WrapperHeadline = styled.div`
-    
+export const WrapperHeadline = styled.div`    
   @media (min-width: 600px) {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 1320px;
     margin: auto;
-
-    /*
-    background: ${({ contact }) => contact
-    ? `url(${require('../../assets/images/cta-img2.svg')}) bottom right no-repeat;`
-    : ""};
-    */
   } 
 `
 
@@ -123,7 +105,6 @@ export const Image = styled(Img).attrs({
     width: 455px;
   }
   @media (min-width: 900px) {
-    /* flex: 1; */
     width: 600px;
   }
 `
