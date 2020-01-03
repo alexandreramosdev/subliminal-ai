@@ -25,7 +25,7 @@ const Contact = ({ location }) => (
     />
 
     <WorkTogether />
-    <DontLikeForm />
+    {/* <DontLikeForm /> */}
     <Trusted light />
   </Layout>
 )
