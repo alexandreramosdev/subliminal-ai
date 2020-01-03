@@ -1,15 +1,23 @@
 import styled, { css } from "styled-components"
 import Img from "gatsby-image"
+import ButtonStl from '../button'
 
 export const Header = styled.header`
   padding: 50px 25px 70px;
+  /* padding: ${({ contact }) => contact ? "50px 25px 0" : "50px 25px 70px"}; */
 
   background-color: ${({ contact }) => contact ? '#fff6ef' : "#fff"};
 
+  /* 
   @media (max-width: 600px) {
     background: ${({ contact }) => contact
     ? `#fff6ef url(${require('../../assets/images/cta-img2.svg')}) bottom right / 25% no-repeat;`
     : ""};
+  } 
+  */
+
+  @media (max-width: 780px) {
+    padding: ${({ contact }) => contact ? "50px 25px 20px" : "50px 25px 70px"};
   }
 
 `
@@ -23,10 +31,12 @@ export const WrapperHeadline = styled.div`
     max-width: 1320px;
     margin: auto;
 
-  background: ${({ contact }) => contact
+    /*
+    background: ${({ contact }) => contact
     ? `url(${require('../../assets/images/cta-img2.svg')}) bottom right no-repeat;`
     : ""};
-  }
+    */
+  } 
 `
 
 export const Headline = styled.div`
@@ -125,6 +135,10 @@ export const WrapperAction = styled.div`
     : "center"};
   align-items: center;
 
+  & > ${ButtonStl} {
+      z-index: 1000; 
+  }
+
   @media (min-width: 600px) {
     justify-content: flex-start;
   }
@@ -147,6 +161,8 @@ export const Link = styled.a`
   text-decoration: none;
   font-weight: 700;
   color: #1f256d;
+
+  z-index: 1000;
 
   & > img {
     transition: ease-in-out 300ms;

@@ -3,6 +3,7 @@ import React from 'react';
 import { Layout, SEO, Trusted, Hero, CallTo } from '../../components'
 import WorkTogether from './workTogether'
 import DontLikeForm from './dontLikeForm'
+import LetsTalk from './letsTalk'
 
 // import { Container } from './styles';
 
@@ -14,6 +15,7 @@ const Contact = ({ location }) => (
       title="Let’s Talk About AI, Schedule a call with an AI Expert"
       subTitle="Have a project in mind? Or just curious about AI? Let’s connect to discuss your needs and determine if AI is a fit for your use case."
     />
+    <LetsTalk />
 
     <CallTo
       isContactPage
@@ -21,6 +23,7 @@ const Contact = ({ location }) => (
       subtitle="Have a project in mind? Or just curious about AI? Let’s connect to discuss your needs and determine if AI is a fit for your use case."
       linkTitle="Chat with us"
     />
+
     <WorkTogether />
     <DontLikeForm />
     <Trusted light />
