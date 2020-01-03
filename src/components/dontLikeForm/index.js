@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Section, Row, Col, Title, Link } from './styles';
-import dontLikeForms from '../../../assets/images/dontlinkforms.png'
+import dontLikeForms from '../../assets/images/dontlinkforms.png'
 
 const DontLikeForm = () => {
   return (

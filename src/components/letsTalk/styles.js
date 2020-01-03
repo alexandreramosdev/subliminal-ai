@@ -5,7 +5,7 @@ export const Section = styled.section`
   
 
   background: 
-  url(${require('../../../assets/images/cta-img2.svg')}) 100% 0% / 25% no-repeat,linear-gradient(
+  url(${require('../../assets/images/cta-img2.svg')}) 100% 0% / 25% no-repeat,linear-gradient(
     to bottom, 
     #fff6ef 15%,
     #fff 15%,
@@ -18,7 +18,7 @@ export const Section = styled.section`
     transform: translateY(-150px);
 
      background:
-  url(${require('../../../assets/images/cta-img2.svg')}) 90% 0% / 25% no-repeat,linear-gradient(
+  url(${require('../../assets/images/cta-img2.svg')}) 90% 0% / 25% no-repeat,linear-gradient(
     to bottom, 
     #fff6ef 15%,
     #fff 15%,

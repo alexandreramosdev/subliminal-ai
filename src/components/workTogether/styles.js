@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-import bgImageLeft from "../../../assets/images/cta-img1.svg"
-import bgImageLeftB from "../../../assets/images/cta-img5.svg"
-import bgImageRight from "../../../assets/images/cta-img4.svg"
-import bgImageRightT from "../../../assets/images/products-cta-img2.svg"
+import bgImageLeft from "../../assets/images/cta-img1.svg"
+import bgImageLeftB from "../../assets/images/cta-img5.svg"
+import bgImageRight from "../../assets/images/cta-img4.svg"
+import bgImageRightT from "../../assets/images/products-cta-img2.svg"
 
 export const Section = styled.section`
   padding: 50px 0;
