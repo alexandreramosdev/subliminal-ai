@@ -50,7 +50,12 @@ const Hero = ({ contact = false, title, subTitle }) => {
         />
       </WrapperHeadline>
       <WrapperAction contact={contact}>
-        <Button href="https://calendly.com/kabirkhan/30min" target="_blank" responsive bgShadow={contact ? "#fff6ef " : "#fff"}>Schedule A Call</Button>
+        <Button
+          href={contact ? "https://calendly.com/kabirkhan/30min" : '/contact'}
+          target={contact ? "_blank" : ""}
+          responsive
+          bgShadow={contact ? "#fff6ef " : "#fff"}>
+          {!contact ? "Contact" : "Schedule A Call"}</Button>
         <Link href="/#">
           Subliminal AI Extended <img src={arrow} alt="arrow" />
         </Link>
