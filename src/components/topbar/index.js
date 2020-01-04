@@ -30,6 +30,7 @@ const Topbar = ({ isContactPage, location }) => {
     { to: "/#resource", title: "Resource" },
     { to: "/subliminal-ai", title: "Blog" },
     { to: "/#learn-more", title: "Learn More" },
+    { to: "/contact", title: "Contact" },
   ]
 
   return (
@@ -51,11 +52,11 @@ const Topbar = ({ isContactPage, location }) => {
               </Item>
             ))}
 
-            <Item>
+            {/* <Item>
               <Button onClick={isMobile ? handleClick : null} bgShadow={isContactPage ? "#fff6ef " : "#fff"} >
                 Schedule A Call
             </Button>
-            </Item>
+            </Item> */}
           </List>
         </Nav>
       </Wrapper>

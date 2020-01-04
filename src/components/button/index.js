@@ -1,11 +1,15 @@
 import styled, { css } from "styled-components"
 
-const Button = styled.button`
+const Button = styled.a`
   width: 200px;
   height: 58px;
   background: #2a84eb;
   color: #fff;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 
   box-shadow: -12px 12px 0px -1px ${({ bgShadow }) => (bgShadow ? bgShadow : "#fff")},
     -12px 12px 0 1px #2a84eb;
