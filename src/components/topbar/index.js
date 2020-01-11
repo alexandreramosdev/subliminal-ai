@@ -28,7 +28,7 @@ const Topbar = ({ isContactPage, location }) => {
   const routes = [
     { to: "/#features", title: "Features" },
     { to: "/#resource", title: "Resource" },
-    { to: "/subliminal-ai", title: "Blog" },
+    { to: "/blog", title: "Blog" },
     { to: "/#learn-more", title: "Learn More" },
     { to: "/contact", title: "Contact" },
   ]
