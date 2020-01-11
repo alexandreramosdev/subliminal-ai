@@ -1,11 +1,29 @@
 import React from "react"
 
-import { Layout, CallTo, Trusted } from "../../components"
-// import { Container } from './styles';
+import { Layout, CallTo, Trusted, Card } from "../../components"
+import { Grid } from './styles';
 
 const blog = () => (
   <Layout>
-    <div>! Developing BLOG </div>
+    <Grid>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card style={{ width: '100%' }} />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </Grid>
     <Trusted light />
     <CallTo
       title="Got A Project Idea? let’s Have A Quick, 15-minute Call To"
