@@ -21,6 +21,8 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
   const userTwitter = data.site.siteMetadata.social.twitter
   const heroSource = post.frontmatter.hero.childImageSharp.fluid.src
   const published = post.frontmatter.date
+  const author = post.frontmatter.author
+  const category = post.frontmatter.category
   // const { previous, next } = pageContext
   const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" })
 
@@ -46,7 +48,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
       />
       <article>
         <Hero bgHero={heroSource}>
-          <Category>Marketing</Category>
+          <Category>{category}</Category>
           <Title>{post.frontmatter.title}</Title>
 
           <WrapperInfo>
@@ -59,7 +61,7 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
               <InfoTitle>Author</InfoTitle>
               <Media>
                 <Avatar src={require('../../assets/images/avatar.png')} />
-                <Name>By Ghani Pradita</Name>
+                <Name>By {author}</Name>
               </Media>
             </Info>
             <Info>
@@ -108,30 +110,32 @@ export default BlogPostTemplate
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
         site {
-        siteMetadata {
-        title
-        siteUrl
-        social {
-        twitter
-      }
-      }
+          siteMetadata {
+            title
+            siteUrl
+            social {
+              twitter
+            }
+          }
     }
     markdownRemark(fields: {slug: {eq: $slug } }) {
-        id
+      id
       excerpt(pruneLength: 160)
       html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-    description
-        hero {
-        childImageSharp {
-        fluid {
-        src
-      }
+        author
+        category
+        description
+          hero {
+            childImageSharp {
+              fluid {
+                src
+              }
+          }
       }
     }
   }
-}
 }
 `

@@ -1,10 +1,10 @@
 ---
-title: Jose Garcia-balius On Video Games, Overcoming failure, And A Self-taught Career In Coding
-date: "2020-02-09"
+title: Post 3
+date: "2020-01-10"
 description: Any business oriented towards creating a top of the line customer experience needs a competent and comprehensive customer service department.
-author: Ghani Pradita
+author: Monica Cruz
 hero: ./hero.png
-category: marketing
+category: Community
 ---
 
 Any business oriented towards creating a top of the line customer experience needs a competent and comprehensive customer service department. In the past, offering a reliable phone number with an informed customer service team was enough …
