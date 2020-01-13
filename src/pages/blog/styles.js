@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Card from '../../components/card/styles'
+import { Wrapper as Card } from '../../components/card/styles'
 
 export const Grid = styled.div`
   display: grid;
@@ -75,7 +75,5 @@ export const Grid = styled.div`
       & > ${Card}:nth-child(17){
        grid-column: span 2
      }
-     
-
   }
 `;
