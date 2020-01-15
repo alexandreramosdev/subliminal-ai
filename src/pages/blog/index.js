@@ -1,7 +1,7 @@
 import React from "react"
 import styled from 'styled-components'
 
-import { Layout, CallTo, Trusted, Card } from "../../components"
+import { Layout, CallTo, Trusted, Card, Hero, Newsletter } from "../../components"
 
 import { Wrapper as WrapperCard } from '../../components/card/styles'
 
@@ -65,7 +65,7 @@ export const Grid = styled.div`
       }
 
       & > ${Card}:nth-child(15){
-        grid-column: span 2
+        grid-column: span 3
       }
       & > ${Card}:nth-child(16){
         grid-column: span 2
@@ -78,6 +78,10 @@ export const Grid = styled.div`
 
 const blog = () => (
   <Layout>
+    {/* <Hero
+      title="Be Part Of The Machine Learning Revolution."
+      subTitle="The future of design is open. We’re building it. Stories, news, and tips from behind the artboards."
+    /> */}
     <Grid>
       <Card />
       <Card />
@@ -97,6 +101,7 @@ const blog = () => (
       <Card />
       <Card />
     </Grid>
+    <Newsletter />
     <Trusted light />
     <CallTo
       title="Got A Project Idea? let’s Have A Quick, 15-minute Call To"
