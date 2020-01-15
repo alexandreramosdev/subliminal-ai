@@ -8,19 +8,23 @@ import { Wrapper as WrapperCard } from '../../components/card/styles'
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  margin: 0 10px;
 
   @media (min-width: 600px) {
-      grid-template-columns: 1fr 1fr;
-      width:100%;
-      max-width: 1320px;
+      grid-template-columns: repeat(2, minmax(150px, 1fr));
+      grid-gap: 10px;   
       margin: 0 auto;
   }
 
   @media (min-width: 900px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat(6, minmax(150px, 209px));
+      grid-gap: 20px;
+
+         width:100%;
+      max-width: 1320px;
 
       & > ${WrapperCard}:nth-child(1) {
-       grid-column: span 4;
+       grid-column: 1 / 5;
       }
 
       & > ${WrapperCard}:nth-child(2){
@@ -64,14 +68,14 @@ export const Grid = styled.div`
        grid-column: span 3;
       }
 
-      & > ${Card}:nth-child(15){
-        grid-column: span 3
+      & > ${WrapperCard}:nth-child(15){
+        grid-column: span 2;
       }
-      & > ${Card}:nth-child(16){
-        grid-column: span 2
+      & > ${WrapperCard}:nth-child(16){
+        grid-column: span 2;
       }
-      & > ${Card}:nth-child(17){
-       grid-column: span 2
+      & > ${WrapperCard}:nth-child(17){
+       grid-column: span 2;
      }
   }
 `;
@@ -82,6 +86,7 @@ const blog = () => (
       title="Be Part Of The Machine Learning Revolution."
       subTitle="The future of design is open. We’re building it. Stories, news, and tips from behind the artboards."
     /> */}
+
     <Grid>
       <Card />
       <Card />
@@ -101,6 +106,7 @@ const blog = () => (
       <Card />
       <Card />
     </Grid>
+
     <Newsletter />
     <Trusted light />
     <CallTo

@@ -18,7 +18,7 @@ import {
 const Hero = ({ contact = false, title, subTitle }) => {
   const data = useStaticQuery(graphql`
     query {
-      image: file(absolutePath: { regex: "/subliminal-hero.png/" }) {
+      heroHome: file(absolutePath: { regex: "/subliminal-hero.png/" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -46,7 +46,7 @@ const Hero = ({ contact = false, title, subTitle }) => {
           contact={contact}
           fluid={contact
             ? data.heroContact.childImageSharp.fluid
-            : data.image.childImageSharp.fluid}
+            : data.heroHome.childImageSharp.fluid}
         />
       </WrapperHeadline>
       <WrapperAction contact={contact}>
