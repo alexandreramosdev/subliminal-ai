@@ -1,9 +1,12 @@
 import React from "react"
 import styled from 'styled-components'
 
-import { Layout, CallTo, Trusted, Card, Hero, Newsletter } from "../../components"
+import { Layout, CallTo, Trusted, Card, Hero, Newsletter, Button } from "../../components"
+
 
 import { Wrapper as WrapperCard } from '../../components/card/styles'
+
+import arrow from '../../assets/images/arrow.svg'
 
 export const Grid = styled.div`
   display: grid;
@@ -80,6 +83,41 @@ export const Grid = styled.div`
   }
 `;
 
+export const WrapperAction = styled.div`
+  display: flex;
+  justify-content:  center;
+  align-items: center;
+  padding: 75px 0;
+
+  & > ${Button} {
+      z-index: 1000; 
+  }
+  & > * {
+    margin: 0 20px;
+  }
+`
+
+export const Link = styled.a`
+  text-decoration: none;
+  font-weight: 700;
+  color: #1f256d;
+
+  z-index: 1000;
+
+  & > img {
+    transition: ease-in-out 300ms;
+    margin: 0 0 0 10px;
+  }
+
+  &:hover {
+    color: #353167;
+
+    & > img {
+      margin: 0 0 0 15px;
+    }
+  }
+`
+
 const blog = () => (
   <Layout>
     {/* <Hero
@@ -106,6 +144,18 @@ const blog = () => (
       <Card />
       <Card />
     </Grid>
+
+    <WrapperAction>
+      <Button
+        href='/blog'
+        responsive
+        bgShadow="#fff6ef ">
+        View all Articles
+      </Button>
+      <Link href="/">
+        Subliminal AI Extended <img src={arrow} alt="arrow" />
+      </Link>
+    </WrapperAction>
 
     <Newsletter />
     <Trusted light />
