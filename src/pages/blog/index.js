@@ -5,12 +5,13 @@ import { FaSearch } from 'react-icons/fa'
 import Enter from '../../assets/images/enter.svg'
 
 import {
-  Layout, CallTo, Trusted, Card, Hero, Newsletter, Button, CardNewsletter
+  Layout, CallTo, Trusted, Card, Hero, Newsletter, Button, CardNewsletter, CardVideo
 } from "../../components"
 
 
 import { Wrapper as WrapperCard } from '../../components/card/styles'
 import { Wrapper as WrapperCardNewsletter } from '../../components/cardNewsletter/styles'
+import { Wrapper as WrapperCardVideo } from '../../components/cardVideo/styles'
 
 import arrow from '../../assets/images/arrow.svg'
 
@@ -29,25 +30,31 @@ const WrapperGrid = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
- 
-  
+   grid-gap: 15px;   
+  grid-template-columns: 1fr;  
 
   @media (min-width: 600px) {
       grid-template-columns: repeat(2, minmax(150px, 1fr));
-      grid-gap: 10px;   
+      grid-gap: 20px;   
       margin: 0 auto;
+
+      
+    & > ${WrapperCard}:nth-child(9){
+       grid-column: 1 / -1;
+    }
+    & > ${WrapperCard}:nth-child(17){        
+       grid-column: 1 / -1;
+     }
   }
 
   @media (min-width: 900px) {
-      grid-template-columns: repeat(6, minmax(150px, 209px));
-      grid-gap: 20px;
-
-         width:100%;
+      grid-template-columns: repeat(6, minmax(100px, 209px));
+      grid-gap: 25px;
+       width:100%;
       max-width: 1320px;
 
       & > ${WrapperCard}:nth-child(1) {
-       grid-column: 1 / 5;
+       grid-column: 1 / 5;  
       }
 
       & > ${WrapperCardNewsletter}:nth-child(2){
@@ -66,7 +73,7 @@ export const Grid = styled.div`
       & > ${WrapperCard}:nth-child(6){
         grid-column: span 2;
       }
-      & > ${WrapperCard}:nth-child(7){
+      & > ${WrapperCardVideo}:nth-child(7){
         grid-column: span 2;
       }
       & > ${WrapperCard}:nth-child(8){
@@ -98,6 +105,7 @@ export const Grid = styled.div`
         grid-column: span 2;
       }
       & > ${WrapperCard}:nth-child(17){
+        
        grid-column: span 2;
      }
   }
@@ -231,7 +239,7 @@ const Blog = () => {
           <Card />
           <Card />
           <Card />
-          <Card />
+          <CardVideo />
           <Card />
           <Card />
           <WrapperCustomer style={{ gridColumn: "1 / -1" }}>

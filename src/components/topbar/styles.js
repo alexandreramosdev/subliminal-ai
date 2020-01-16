@@ -43,7 +43,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1500;
 
   @media (min-width: 900px) {
     position: initial;

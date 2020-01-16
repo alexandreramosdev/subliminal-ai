@@ -11,6 +11,7 @@ export const Content = styled.div`
   border-radius: 20px;
   box-shadow: 0 0 5px rgba(209, 211, 214, 0.2);
   overflow: hidden;
+  height: 100%;
 `
 
 export const HeaderCard = styled.img`
