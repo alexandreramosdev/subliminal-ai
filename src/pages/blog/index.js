@@ -1,5 +1,6 @@
 import React from "react"
 import styled from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import { Layout, CallTo, Trusted, Card, Hero, Newsletter, Button } from "../../components"
 
@@ -118,53 +119,68 @@ export const Link = styled.a`
   }
 `
 
-const blog = () => (
-  <Layout>
-    {/* <Hero
-      title="Be Part Of The Machine Learning Revolution."
-      subTitle="The future of design is open. We’re building it. Stories, news, and tips from behind the artboards."
-    /> */}
+const Blog = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroBlog: file(absolutePath: { regex: "/hero-blog.png/" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <Layout bgColorTopbar='#9ce3ff'>
+      <Hero
+        title="Be Part Of The Machine Learning Revolution."
+        subTitle="The future of design is open. We’re building it. Stories, news, and tips from behind the artboards."
+        sourceImage={data.heroBlog.childImageSharp.fluid}
+        bgColor='#9ce3ff'
+      />
 
-    <Grid>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card style={{ width: '100%' }} />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </Grid>
+      <Grid>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card style={{ width: '100%' }} />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </Grid>
 
-    <WrapperAction>
-      <Button
-        href='/blog'
-        responsive
-        bgShadow="#fff6ef ">
-        View all Articles
+      <WrapperAction>
+        <Button
+          href='/blog'
+          responsive
+          bgShadow="#fff6ef ">
+          View all Articles
       </Button>
-      <Link href="/">
-        Subliminal AI Extended <img src={arrow} alt="arrow" />
-      </Link>
-    </WrapperAction>
+        <Link href="/">
+          Subliminal AI Extended <img src={arrow} alt="arrow" />
+        </Link>
+      </WrapperAction>
 
-    <Newsletter />
-    <Trusted light />
-    <CallTo
-      title="Got A Project Idea? let’s Have A Quick, 15-minute Call To"
-      subtitle="Find out how Data Science Consulting can help your business. Estimate the time and budget needed to develop a solution. Learn more about our expertise and capabilities."
-      linkTitle="Learn About The Process"
-    />
-  </Layout>
-)
+      <Newsletter />
+      <Trusted light />
+      <CallTo
+        title="Got A Project Idea? let’s Have A Quick, 15-minute Call To"
+        subtitle="Find out how Data Science Consulting can help your business. Estimate the time and budget needed to develop a solution. Learn more about our expertise and capabilities."
+        linkTitle="Learn About The Process"
+      />
+    </Layout>
+  )
+}
 
-export default blog
+export default Blog

@@ -4,7 +4,8 @@ import ButtonStl from '../button'
 
 export const Header = styled.header`
   padding: 50px 25px 70px;
-  background-color: ${({ contact }) => contact ? '#fff6ef' : "#fff"};
+  background-color: ${({ bgColor }) => bgColor ? bgColor : "#fff"};
+  /* background-color: ${({ contact }) => contact ? '#fff6ef' : "#fff"}; */
 
   @media (max-width: 780px) {
     padding: ${({ contact }) => contact ? "50px 25px 20px" : "50px 25px 70px"};

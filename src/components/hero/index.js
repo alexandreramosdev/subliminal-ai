@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
 import arrow from "../../assets/images/arrow.svg"
 
@@ -15,39 +14,15 @@ import {
   Link,
 } from "./styles"
 
-const Hero = ({ contact = false, title, subTitle }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      heroHome: file(absolutePath: { regex: "/subliminal-hero.png/" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      heroContact: file(absolutePath: { regex: "/hero-contact.png/" }) {
-        childImageSharp {
-          fluid(maxWidth: 455, maxHeight: 552) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
+const Hero = ({ contact = false, title, subTitle, sourceImage, bgColor }) => {
   return (
-    <Header contact={contact}>
+    <Header bgColor={bgColor} contact={contact}>
       <WrapperHeadline contact={contact}>
         <Headline contact={contact}>
           <Title contact={contact}>{title} </Title>
           <SubTitle>{subTitle}</SubTitle>
         </Headline>
-        <Image
-          contact={contact}
-          fluid={contact
-            ? data.heroContact.childImageSharp.fluid
-            : data.heroHome.childImageSharp.fluid}
-        />
+        <Image contact={contact} fluid={sourceImage} />
       </WrapperHeadline>
       <WrapperAction contact={contact}>
         <Button

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import {
   Layout,
@@ -13,18 +13,27 @@ import {
   News,
 } from "../components"
 
-const Index = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  // const posts = data.allMarkdownRemark.edges
+const Index = ({ location }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroHome: file(absolutePath: { regex: "/subliminal-hero.png/" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       
       <SEO title="Home" />
       <Hero
         title="Transform your business with Artificial Intelligence"
-        subTitle=" Subliminal AI is a Machine Learning Consulting firm experienced in
-            applying AI and Machine Learning to business problems."
+        subTitle=" Subliminal AI is a Machine Learning Consulting firm experienced in applying AI and Machine Learning to business problems."
+        sourceImage={data.heroHome.childImageSharp.fluid}
       />
       <Trusted />
       <OpenSource />
@@ -47,27 +56,27 @@ const Index = ({ data, location }) => {
 
 export default Index
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+//       edges {
+//         node {
+//           excerpt
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             date(formatString: "MMMM DD, YYYY")
+//             title
+//             description
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
