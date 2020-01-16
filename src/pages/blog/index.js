@@ -4,10 +4,13 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { FaSearch } from 'react-icons/fa'
 import Enter from '../../assets/images/enter.svg'
 
-import { Layout, CallTo, Trusted, Card, Hero, Newsletter, Button } from "../../components"
+import {
+  Layout, CallTo, Trusted, Card, Hero, Newsletter, Button, CardNewsletter
+} from "../../components"
 
 
 import { Wrapper as WrapperCard } from '../../components/card/styles'
+import { Wrapper as WrapperCardNewsletter } from '../../components/cardNewsletter/styles'
 
 import arrow from '../../assets/images/arrow.svg'
 
@@ -33,7 +36,7 @@ export const Grid = styled.div`
        grid-column: 1 / 5;
       }
 
-      & > ${WrapperCard}:nth-child(2){
+      & > ${WrapperCardNewsletter}:nth-child(2){
        grid-column: span 2;
       }
 
@@ -196,7 +199,7 @@ const Blog = () => {
 
       <Grid>
         <Card />
-        <Card />
+        <CardNewsletter />
         <Card />
         <Card />
         <Card />
