@@ -16,27 +16,30 @@ import {
   Name
 } from './styles';
 
-const Card = () => (
-  <Wrapper>
-    <Content>
-      <HeaderCard src={require("../../assets/images/news_1.png")} />
-      <Info>
-        <Tag>Marketing </Tag> <Time> Mar 09, 2019</Time>
-      </Info>
-      <TitleCard>
-        Deep Learning Chatbot – Analysis and Implementation
-      </TitleCard>
-      <DescriptionCard>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-        enim ad minim veniam, quis nostrud exercitation ullamco
-      </DescriptionCard>
-      <Media>
-        <Avatar src={avatar} />
-        <Name>By Ghani Pradita</Name>
-      </Media>
-    </Content>
-  </Wrapper>
-);
+const Card = ({ post, slug }) => {
+  const { title, date, description, category, hero, author } = post
+
+  console.log(post)
+  return (
+    <Wrapper>
+      <Content href={slug}>
+        <HeaderCard src={hero.childImageSharp.fluid.src} />
+        <Info>
+          <Tag>{category} </Tag> <Time> {date}</Time>
+        </Info>
+        <TitleCard>
+          {title}
+        </TitleCard>
+        <DescriptionCard>
+          {description}
+        </DescriptionCard>
+        <Media>
+          <Avatar src={avatar} />
+          <Name>By {author}</Name>
+        </Media>
+      </Content>
+    </Wrapper>
+  )
+};
 
 export default Card;

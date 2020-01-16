@@ -6,12 +6,14 @@ export const Wrapper = styled.div`
   /* max-width: 869px; */
 `
 
-export const Content = styled.div`
+export const Content = styled.a`
+  display: block;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 0 5px rgba(209, 211, 214, 0.2);
   overflow: hidden;
   height: 100%;
+  text-decoration: none;
 `
 
 export const HeaderCard = styled.img`
@@ -101,6 +103,7 @@ export const Name = styled.h5`
 `
 export const DescriptionCard = styled.p`
   padding: 0 30px;
+  color: #353167;
   @media (min-width: 600px) {
     font-size: 16px;
   }

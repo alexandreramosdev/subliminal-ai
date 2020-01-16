@@ -196,7 +196,8 @@ const LinkCategories = styled.a`
 
 const categories = ["Community", "Culture", "Design", "Developer", "Engineering", "Marketplace", "News", "Product", "Updates"]
 
-const Blog = () => {
+const Blog = ({ allMarkdownRemark }) => {
+  console.log(allMarkdownRemark)
   const data = useStaticQuery(graphql`
     query {
       heroBlog: file(absolutePath: { regex: "/hero-blog.png/" }) {
@@ -206,8 +207,34 @@ const Blog = () => {
           }
         }
       }
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        edges {
+          node {
+            excerpt
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              description
+              category
+              author
+              hero {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   `)
+
+  console.log(data)
 
   return (
     <Layout bgColorTopbar='#9ce3ff'>
@@ -233,32 +260,39 @@ const Blog = () => {
       </Hero>
       <WrapperGrid>
         <Grid>
-          <Card />
-          <CardNewsletter />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <CardVideo />
-          <Card />
-          <Card />
-          <WrapperCustomer style={{ gridColumn: "1 / -1" }}>
-            <HeaderCustomer>
-              <h2>Customer Stories</h2>
-              <Link href="/">
-                View all <img src={arrow} alt="arrow" />
-              </Link>
-            </HeaderCustomer>
-            <p>Abstract Customers Share How They Manage Design Systems, Scale Design Operations, And Collaborate Cross-functionally.</p>
-          </WrapperCustomer>
-          {/* <Card style={{ gridColumn: "1 / -1" }} /> */}
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {data && data.allMarkdownRemark.edges.map(({ node }, index) => {
+            if (index === 1) {
+              return (<CardNewsletter />)
+            }
+
+            if (index === 6) {
+              return (<CardVideo />)
+            }
+
+            if (index === 9) {
+              return (
+                <WrapperCustomer style={{ gridColumn: "1 / -1" }}>
+                  <HeaderCustomer>
+                    <h2>Customer Stories</h2>
+                    <Link href="/">
+                      View all <img src={arrow} alt="arrow" />
+                    </Link>
+                  </HeaderCustomer>
+                  <p>Abstract Customers Share How They Manage Design Systems, Scale Design Operations, And Collaborate Cross-functionally.</p>
+                </WrapperCustomer>
+              )
+            }
+
+            if (index >= 17) return
+
+            return (
+              <Card
+                post={node.frontmatter}
+                slug={node.fields.slug}
+                key={String(node.frontmatter.date + Math.random().toString(36).substring(7))}
+              />
+            )
+          })}
         </Grid>
 
         <WrapperAction>
