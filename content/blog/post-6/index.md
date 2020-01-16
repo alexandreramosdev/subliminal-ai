@@ -3,7 +3,7 @@ title: Post 6
 date: 2020-11-12
 description: Any business oriented towards creating a top of the line customer experience needs a competent and comprehensive customer service department.
 author: Alexandre Ramos
-hero: ./hero.png
+hero: ./Image 25.png
 category: Marketplace
 ---
 

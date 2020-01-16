@@ -3,7 +3,7 @@ title: Jose Garcia-balius On Video Games, Overcoming failure, And A Self-taught 
 date: "2020-02-09"
 description: Any business oriented towards creating a top of the line customer experience needs a competent and comprehensive customer service department.
 author: Ghani Pradita
-hero: ./hero.png
+hero: ./Image 34.png
 category: marketing
 ---
 
