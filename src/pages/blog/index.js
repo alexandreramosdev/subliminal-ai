@@ -14,10 +14,24 @@ import { Wrapper as WrapperCardNewsletter } from '../../components/cardNewslette
 
 import arrow from '../../assets/images/arrow.svg'
 
+const WrapperGrid = styled.div`
+  background-color: #f6f7fb;
+  padding: 75px 10px 25px; 
+
+  @media (min-width: 600px) {
+     padding: 100px 10px 25px; 
+  }
+
+  @media (min-width: 900px) {
+     padding: 150px 10px 25px; 
+  }
+`;
+
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  margin: 0 10px;
+ 
+  
 
   @media (min-width: 600px) {
       grid-template-columns: repeat(2, minmax(150px, 1fr));
@@ -123,6 +137,19 @@ export const Link = styled.a`
     }
   }
 `
+const WrapperCustomer = styled.div`
+  padding: 50px 10px;
+`;
+
+const HeaderCustomer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & + p {
+    max-width: 800px;
+  }
+`;
 const Search = styled.div`
   margin-bottom: 15px;
   background-color: #fff;
@@ -196,38 +223,48 @@ const Blog = () => {
           ))}
         </Categories>
       </Hero>
+      <WrapperGrid>
+        <Grid>
+          <Card />
+          <CardNewsletter />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <WrapperCustomer style={{ gridColumn: "1 / -1" }}>
+            <HeaderCustomer>
+              <h2>Customer Stories</h2>
+              <Link href="/">
+                View all <img src={arrow} alt="arrow" />
+              </Link>
+            </HeaderCustomer>
+            <p>Abstract Customers Share How They Manage Design Systems, Scale Design Operations, And Collaborate Cross-functionally.</p>
+          </WrapperCustomer>
+          {/* <Card style={{ gridColumn: "1 / -1" }} /> */}
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </Grid>
 
-      <Grid>
-        <Card />
-        <CardNewsletter />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card style={{ width: '100%' }} />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </Grid>
-
-      <WrapperAction>
-        <Button
-          href='/blog'
-          responsive
-          bgShadow="#fff6ef ">
-          View all Articles
-      </Button>
-        <Link href="/">
-          Subliminal AI Extended <img src={arrow} alt="arrow" />
-        </Link>
-      </WrapperAction>
+        <WrapperAction>
+          <Button
+            href='/blog'
+            responsive
+            bgShadow="#fff6ef ">
+            View all Articles
+          </Button>
+          <Link href="/">
+            Subliminal AI Extended <img src={arrow} alt="arrow" />
+          </Link>
+        </WrapperAction>
+      </WrapperGrid>
 
       <Newsletter />
       <Trusted light />
