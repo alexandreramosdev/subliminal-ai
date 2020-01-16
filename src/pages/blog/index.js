@@ -1,6 +1,8 @@
 import React from "react"
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
+import { FaSearch } from 'react-icons/fa'
+import Enter from '../../assets/images/enter.svg'
 
 import { Layout, CallTo, Trusted, Card, Hero, Newsletter, Button } from "../../components"
 
@@ -118,6 +120,41 @@ export const Link = styled.a`
     }
   }
 `
+const Search = styled.div`
+  margin-bottom: 15px;
+  background-color: #fff;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  width: max-content;
+
+ 
+& > input {
+  border: none;
+  padding-left: 10px;
+}
+
+& > img {
+  width: 18px;
+  margin: 0;
+}
+
+`;
+
+const Categories = styled.nav`
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding: 15px 0;
+`
+const LinkCategories = styled.a`
+  color: #1f256d;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 15px;
+  display: inline-block;
+ 
+`
 
 const categories = ["Community", "Culture", "Design", "Developer", "Engineering", "Marketplace", "News", "Product", "Updates"]
 
@@ -144,12 +181,17 @@ const Blog = () => {
         smallImageNone
         buttonsNone
       >
-        <span>Filter By Category</span>
-        <nav>
+        <Search>
+          <FaSearch />
+          <input type="text" placeholder='Search Here…' />
+          <img src={Enter} alt="..." />
+        </Search>
+        <p>Filter By Category</p>
+        <Categories>
           {categories.map(category => (
-            <a key={category} href="#">{category}</a>
+            <LinkCategories key={category} href="#">{category}</LinkCategories>
           ))}
-        </nav>
+        </Categories>
       </Hero>
 
       <Grid>
