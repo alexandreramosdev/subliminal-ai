@@ -115,7 +115,7 @@ export const WrapperAction = styled.div`
   display: flex;
   justify-content:  center;
   align-items: center;
-  padding: 75px 0;
+  padding: 75px 0; 
 
   & > ${Button} {
       z-index: 1000; 
@@ -158,26 +158,43 @@ const HeaderCustomer = styled.div`
     max-width: 800px;
   }
 `;
+
+const WrapperSearch = styled.div`
+ width: 100%;
+  max-width: 1320px;
+  margin: auto;
+`;
 const Search = styled.div`
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   background-color: #fff;
-  padding: 0 10px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  width: max-content;
+  width: 100%;
+  max-width: 700px;
 
- 
-& > input {
-  border: none;
-  padding-left: 10px;
-}
+  & > input {
+    border: none;
+    padding-left: 10px;
+    font-size: 15px;
+    flex: 1;
 
-& > img {
-  width: 18px;
-  margin: 0;
-}
+    @media (min-width: 600px) {
+      font-size: 20px;
+    }
+  }
+
+  & > img {
+  text-align: right;
+    margin: 0;
+  }
 
 `;
+
+const Filter = styled.p`
+  font-weight: 900;
+  margin-bottom: 0;
+`
 
 const Categories = styled.nav`
   display: flex;
@@ -246,32 +263,43 @@ const Blog = ({ allMarkdownRemark }) => {
         smallImageNone
         buttonsNone
       >
-        <Search>
-          <FaSearch />
-          <input type="text" placeholder='Search Here…' />
-          <img src={Enter} alt="..." />
-        </Search>
-        <p>Filter By Category</p>
-        <Categories>
-          {categories.map(category => (
-            <LinkCategories key={category} href="#">{category}</LinkCategories>
-          ))}
-        </Categories>
+        <WrapperSearch>
+          <Search>
+            <FaSearch />
+            <input type="text" placeholder='Search Here…' />
+            <img src={Enter} alt="..." />
+          </Search>
+          <Filter>Filter By Category</Filter>
+          <Categories>
+            {categories.map(category => (
+              <LinkCategories key={category} href="#">{category}</LinkCategories>
+            ))}
+          </Categories>
+        </WrapperSearch>
       </Hero>
       <WrapperGrid>
         <Grid>
           {data && data.allMarkdownRemark.edges.map(({ node }, index) => {
             if (index === 1) {
-              return (<CardNewsletter />)
+              return (
+                <CardNewsletter
+                  key={String(node.frontmatter.date + Math.random().toString(36).substring(7))}
+                />)
             }
 
             if (index === 6) {
-              return (<CardVideo />)
+              return (
+                <CardVideo
+                  key={String(node.frontmatter.date + Math.random().toString(36).substring(7))}
+                />)
             }
 
             if (index === 9) {
               return (
-                <WrapperCustomer style={{ gridColumn: "1 / -1" }}>
+                <WrapperCustomer
+                  style={{ gridColumn: "1 / -1" }}
+                  key={String(node.frontmatter.date + Math.random().toString(36).substring(7))}
+                >
                   <HeaderCustomer>
                     <h2>Customer Stories</h2>
                     <Link href="/">
