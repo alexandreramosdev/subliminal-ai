@@ -24,11 +24,14 @@ const Contact = ({ location }) => {
     <Layout bgColorTopbar='#fff6ef' >
       <SEO title="Contact" />
       <Hero
-        contact
         title="Let’s Talk About AI, Schedule a call with an AI Expert"
         subTitle="Have a project in mind? Or just curious about AI? Let’s connect to discuss your needs and determine if AI is a fit for your use case."
         sourceImage={data.heroContact.childImageSharp.fluid}
         bgColor='#fff6ef'
+        textAlignLeft
+        smallImageNone
+        actionLink='https://calendly.com/kabirkhan/30min'
+        titleButton='Schedule A Call'
       />
       <LetsTalk />
 

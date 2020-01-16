@@ -13,7 +13,7 @@ import {
   News,
 } from "../components"
 
-const Index = ({ location }) => {
+const Index = () => {
   const data = useStaticQuery(graphql`
     query {
       heroHome: file(absolutePath: { regex: "/subliminal-hero.png/" }) {
@@ -27,13 +27,15 @@ const Index = ({ location }) => {
   `)
 
   return (
-    <Layout location={location}>
+    <Layout>
       
       <SEO title="Home" />
       <Hero
         title="Transform your business with Artificial Intelligence"
         subTitle=" Subliminal AI is a Machine Learning Consulting firm experienced in applying AI and Machine Learning to business problems."
         sourceImage={data.heroHome.childImageSharp.fluid}
+        actionLink='/contact'
+        titleButton='Contact'
       />
       <Trusted />
       <OpenSource />

@@ -5,11 +5,11 @@ import Footer from "../footer"
 
 import GlobalStyles from "../../styles/globalStyles"
 
-const Layout = ({ isContactPage, location, children, bgColorTopbar }) => {
+const Layout = ({ children, bgColorTopbar }) => {
   console.log(bgColorTopbar)
   return (
     <>
-      <Topbar bgColorTopbar={bgColorTopbar} isContactPage={isContactPage} location={location} />
+      <Topbar bgColorTopbar={bgColorTopbar} />
       <main>{children}</main>
       <Footer />
       <GlobalStyles />

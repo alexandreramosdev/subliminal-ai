@@ -5,7 +5,6 @@ import ButtonStl from '../button'
 export const Header = styled.header`
   padding: 50px 25px 70px;
   background-color: ${({ bgColor }) => bgColor ? bgColor : "#fff"};
-  /* background-color: ${({ contact }) => contact ? '#fff6ef' : "#fff"}; */
 
   @media (max-width: 780px) {
     padding: ${({ contact }) => contact ? "50px 25px 20px" : "50px 25px 70px"};
@@ -23,8 +22,8 @@ export const WrapperHeadline = styled.div`
 `
 
 export const Headline = styled.div`
-  text-align:  ${({ contact }) => contact
-    ? `left`
+  text-align:  ${({ textAlignLeft }) => textAlignLeft
+    ? "left"
     : "center"};
   margin-bottom: 30px;
 
@@ -50,9 +49,7 @@ export const Headline = styled.div`
 
 export const Title = styled.h1`
   font-size: 25px;
-  line-height:  ${({ contact }) => contact
-    ? `35px`
-    : "42px"};
+  line-height: 42px;
 
   @media (min-width: 600px) {
     font-size: 36px;
@@ -97,7 +94,7 @@ export const Image = styled(Img).attrs({
   z-index: 900;
   margin-bottom: 50px;
 
-  ${({ contact }) => contact && css`
+  ${({ smallImageNone }) => smallImageNone && css`
     display: none;  
   `}
 
@@ -111,10 +108,8 @@ export const Image = styled(Img).attrs({
 `
 
 export const WrapperAction = styled.div`
-  display: flex;
-  justify-content:  ${({ contact }) => contact
-    ? `flex-start`
-    : "center"};
+  display: ${({ buttonsNone }) => buttonsNone ? 'none' : 'flex'};
+  justify-content: center;
   align-items: center;
 
   & > ${ButtonStl} {
@@ -128,9 +123,7 @@ export const WrapperAction = styled.div`
   @media (min-width: 900px) {
     width: 100%;
     max-width: 1320px;
-    margin: ${({ contact }) => contact
-    ? `-58px auto auto`
-    : "-29px auto auto"};
+    margin: -29px auto auto;
   };
 
 

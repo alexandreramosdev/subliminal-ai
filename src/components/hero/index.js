@@ -14,27 +14,41 @@ import {
   Link,
 } from "./styles"
 
-const Hero = ({ contact = false, title, subTitle, sourceImage, bgColor }) => {
+const Hero = ({
+  children,
+  textAlignLeft = false,
+  smallImageNone = false,
+  title,
+  subTitle,
+  sourceImage,
+  bgColor,
+  actionLink,
+  titleButton,
+}) => {
   return (
-    <Header bgColor={bgColor} contact={contact}>
-      <WrapperHeadline contact={contact}>
-        <Headline contact={contact}>
-          <Title contact={contact}>{title} </Title>
+    <Header bgColor={bgColor} >
+      <WrapperHeadline >
+        <Headline textAlignLeft={textAlignLeft}>
+          <Title>{title}</Title>
           <SubTitle>{subTitle}</SubTitle>
         </Headline>
-        <Image contact={contact} fluid={sourceImage} />
+        <Image
+          smallImageNone={smallImageNone}
+          fluid={sourceImage}
+        />
       </WrapperHeadline>
-      <WrapperAction contact={contact}>
-        <Button
-          href={contact ? "https://calendly.com/kabirkhan/30min" : '/contact'}
-          target={contact ? "_blank" : ""}
-          responsive
-          bgShadow={contact ? "#fff6ef " : "#fff"}>
-          {!contact ? "Contact" : "Schedule A Call"}</Button>
-        <Link href="/#">
-          Subliminal AI Extended <img src={arrow} alt="arrow" />
-        </Link>
-      </WrapperAction>
+      {children ? children : (
+        <WrapperAction>
+          <Button
+            href={actionLink}
+            responsive
+            bgShadow={bgColor ? bgColor : "#fff"}>
+            {titleButton}</Button>
+          <Link href="/#">
+            Subliminal AI Extended <img src={arrow} alt="arrow" />
+          </Link>
+        </WrapperAction>
+      )}
     </Header >
   )
 }

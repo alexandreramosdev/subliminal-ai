@@ -119,6 +119,8 @@ export const Link = styled.a`
   }
 `
 
+const categories = ["Community", "Culture", "Design", "Developer", "Engineering", "Marketplace", "News", "Product", "Updates"]
+
 const Blog = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -131,6 +133,7 @@ const Blog = () => {
       }
     }
   `)
+
   return (
     <Layout bgColorTopbar='#9ce3ff'>
       <Hero
@@ -138,7 +141,16 @@ const Blog = () => {
         subTitle="The future of design is open. We’re building it. Stories, news, and tips from behind the artboards."
         sourceImage={data.heroBlog.childImageSharp.fluid}
         bgColor='#9ce3ff'
-      />
+        smallImageNone
+        buttonsNone
+      >
+        <span>Filter By Category</span>
+        <nav>
+          {categories.map(category => (
+            <a key={category} href="#">{category}</a>
+          ))}
+        </nav>
+      </Hero>
 
       <Grid>
         <Card />
