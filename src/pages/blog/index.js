@@ -192,7 +192,7 @@ const Search = styled.div`
 `;
 
 const Filter = styled.p`
-  font-weight: 900;
+  font-weight: 500;
   margin-bottom: 0;
 `
 
@@ -201,17 +201,27 @@ const Categories = styled.nav`
   overflow-x: auto;
   flex-wrap: nowrap;
   padding: 15px 0;
+  align-items: center;
 `
 const LinkCategories = styled.a`
   color: #1f256d;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: none;
   margin-right: 15px;
   display: inline-block;
- 
+  white-space: nowrap;
 `
 
-const categories = ["Community", "Culture", "Design", "Developer", "Engineering", "Marketplace", "News", "Product", "Updates"]
+const Square = styled.span`
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: #e5e7ed;
+      margin-left: 10px;
+      margin-bottom: 3px; 
+`
+
+const categories = ["Community", "Culture", "Design", "Developer", "Engineering", "Marketplace", "News", "Product Updates"]
 
 const Blog = ({ allMarkdownRemark }) => {
   console.log(allMarkdownRemark)
@@ -271,8 +281,8 @@ const Blog = ({ allMarkdownRemark }) => {
           </Search>
           <Filter>Filter By Category</Filter>
           <Categories>
-            {categories.map(category => (
-              <LinkCategories key={category} href="#">{category}</LinkCategories>
+            {categories.map((category, index, array) => (
+              <LinkCategories key={category} href="#">{category} {index < array.length - 1 && <Square />} </LinkCategories>
             ))}
           </Categories>
         </WrapperSearch>
