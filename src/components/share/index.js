@@ -23,7 +23,7 @@ const Share = ({ socialConfig, isAside = false }) => (
       <Title>
         Over to you! Do you invest in Instagram ads? <br />
         Drop a comment below to let us know!
-    </Title>
+      </Title>
     )}
     <Row>
       {!isAside && (

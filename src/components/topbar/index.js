@@ -33,7 +33,7 @@ const Topbar = ({ isContactPage, bgColorTopbar }) => {
 
   return (
     <Container bgColorTopbar={bgColorTopbar}>
-      <Wrapper >
+      <Wrapper>
         <Link to="/">
           <Logo fixed={data.logo.childImageSharp.fixed} />
         </Link>

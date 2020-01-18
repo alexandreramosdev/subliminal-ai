@@ -1,32 +1,30 @@
 import styled, { css } from "styled-components"
 import Img from "gatsby-image"
-import ButtonStl from '../button'
+import ButtonStl from "../button"
 
 export const Header = styled.header`
   padding: 50px 25px 70px;
-  background-color: ${({ bgColor }) => bgColor ? bgColor : "#fff"};
+  background-color: ${({ bgColor }) => (bgColor ? bgColor : "#fff")};
 
   @media (max-width: 780px) {
-    padding: ${({ contact }) => contact ? "50px 25px 20px" : "50px 25px 70px"};
+    padding: ${({ contact }) =>
+      contact ? "50px 25px 20px" : "50px 25px 70px"};
   }
 `
 
-export const WrapperHeadline = styled.div`    
+export const WrapperHeadline = styled.div`
   @media (min-width: 600px) {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 1320px;
     margin: auto;
-  } 
+  }
 `
 
 export const Headline = styled.div`
-  text-align:  ${({ textAlignLeft }) => textAlignLeft
-    ? "left"
-    : "center"};
+  text-align: ${({ textAlignLeft }) => (textAlignLeft ? "left" : "center")};
   margin-bottom: 30px;
-
 
   @media (min-width: 600px) {
     max-width: 300px;
@@ -94,9 +92,11 @@ export const Image = styled(Img).attrs({
   z-index: 900;
   margin-bottom: 50px;
 
-  ${({ smallImageNone }) => smallImageNone && css`
-    display: none;  
-  `}
+  ${({ smallImageNone }) =>
+    smallImageNone &&
+    css`
+      display: none;
+    `}
 
   @media (min-width: 600px) {
     display: block;
@@ -108,12 +108,12 @@ export const Image = styled(Img).attrs({
 `
 
 export const WrapperAction = styled.div`
-  display: ${({ buttonsNone }) => buttonsNone ? 'none' : 'flex'};
+  display: ${({ buttonsNone }) => (buttonsNone ? "none" : "flex")};
   justify-content: center;
   align-items: center;
 
   & > ${ButtonStl} {
-      z-index: 1000; 
+    z-index: 1000;
   }
 
   @media (min-width: 600px) {
@@ -124,8 +124,7 @@ export const WrapperAction = styled.div`
     width: 100%;
     max-width: 1320px;
     margin: -29px auto auto;
-  };
-
+  }
 
   & > * {
     margin: 0 20px;

@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import TinySlider from "tiny-slider-react"
 
-import text from '../../data/text.json'
+import text from "../../data/text.json"
 
 import avatar from "../../assets/images/avatar.png"
 import arrowLong from "../../assets/images/arrow-long.svg"
@@ -63,32 +63,29 @@ const Testimonial = () => {
       </Wrapper>
       <WrapperCarousel>
         <TinySlider settings={settings} ref={controlsRef}>
-          {text.testimonial.cards && text.testimonial.cards.map(card => (
-            <Card key={card.id}>
-              <Content>
-                <Media>
-                  <Avatar src={avatar} />
-                  <User>
-                    <Name>{card.name}</Name>
-                    <Office>
-                      {card.office}
-                    </Office>
-                  </User>
-                </Media>
-                <DescriptionCard>
-                  {card.description}
-                </DescriptionCard>
-                <Stars>
-                  <StarIcon selected />
-                  <StarIcon selected />
-                  <StarIcon selected />
-                  <StarIcon selected />
-                  <StarIcon />
-                  <span> 4.5 / 5</span>
-                </Stars>
-              </Content>
-            </Card>
-          ))}
+          {text.testimonial.cards &&
+            text.testimonial.cards.map(card => (
+              <Card key={card.id}>
+                <Content>
+                  <Media>
+                    <Avatar src={avatar} />
+                    <User>
+                      <Name>{card.name}</Name>
+                      <Office>{card.office}</Office>
+                    </User>
+                  </Media>
+                  <DescriptionCard>{card.description}</DescriptionCard>
+                  <Stars>
+                    <StarIcon selected />
+                    <StarIcon selected />
+                    <StarIcon selected />
+                    <StarIcon selected />
+                    <StarIcon />
+                    <span> 4.5 / 5</span>
+                  </Stars>
+                </Content>
+              </Card>
+            ))}
         </TinySlider>
         <Controls>
           <button type="button" onClick={() => onGoTo("prev")}>

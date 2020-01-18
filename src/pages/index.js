@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import text from '../data/text.json'
+import text from "../data/text.json"
 
 import {
   Layout,
@@ -30,14 +30,13 @@ const Index = () => {
 
   return (
     <Layout>
-      
       <SEO title="Home" />
       <Hero
         title={text.hero.title.home}
         subTitle={text.hero.subtitle.home}
         sourceImage={data.heroHome.childImageSharp.fluid}
-        actionLink='/contact'
-        titleButton='Contact'
+        actionLink="/contact"
+        titleButton="Contact"
       />
       <Trusted />
       <OpenSource />

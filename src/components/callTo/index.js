@@ -21,18 +21,24 @@ const CallTo = ({ title, subtitle, isContactPage, linkTitle }) => {
         <Subtitle isContactPage={isContactPage}>{subtitle}</Subtitle>
         <WrapperButtons>
           <Button
-            href={isContactPage ? "https://calendly.com/kabirkhan/30min" : '/contact'}
+            href={
+              isContactPage
+                ? "https://calendly.com/kabirkhan/30min"
+                : "/contact"
+            }
             target={isContactPage ? "_blank" : ""}
             responsive
-            bgShadow={isContactPage ? '#fff' : '#003eba'}
+            bgShadow={isContactPage ? "#fff" : "#003eba"}
           >
-            {!isContactPage ? "Contact" : "Schedule A Call"}</Button>
+            {!isContactPage ? "Contact" : "Schedule A Call"}
+          </Button>
           <LearnAboutLink isContactPage={isContactPage}>
-            {linkTitle} <img src={isContactPage ? arrowBlue : arrow} alt="..." />
+            {linkTitle}{" "}
+            <img src={isContactPage ? arrowBlue : arrow} alt="..." />
           </LearnAboutLink>
         </WrapperButtons>
       </Wrapper>
-    </Section >
+    </Section>
   )
 }
 

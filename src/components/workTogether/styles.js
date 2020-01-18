@@ -11,16 +11,16 @@ export const Section = styled.section`
     url(${bgImageLeftB}) bottom left / 70px no-repeat,
     url(${bgImageRight}) 100% 70% / 70px no-repeat,
     url(${bgImageRightT}) 95% 0% / 100px no-repeat,
-    linear-gradient(74deg, #005ec9 0%, #003eba 51%, #2a84eb 100%);   
+    linear-gradient(74deg, #005ec9 0%, #003eba 51%, #2a84eb 100%);
 
   @media (min-width: 600px) {
     padding: 75px 0;
 
     background: url(${bgImageLeft}) top left / 100px no-repeat,
-        url(${bgImageLeftB}) bottom left / 150px no-repeat,
-        url(${bgImageRight}) 100% 70% / 100px no-repeat,
-        url(${bgImageRightT}) 95% 0% / 200px no-repeat,
-        linear-gradient(74deg, #005ec9 0%, #003eba 51%, #2a84eb 100%);
+      url(${bgImageLeftB}) bottom left / 150px no-repeat,
+      url(${bgImageRight}) 100% 70% / 100px no-repeat,
+      url(${bgImageRightT}) 95% 0% / 200px no-repeat,
+      linear-gradient(74deg, #005ec9 0%, #003eba 51%, #2a84eb 100%);
   }
 
   @media (min-width: 900px) {
@@ -111,4 +111,4 @@ export const Agreement = styled.label`
   & > input {
     margin-right: 10px;
   }
-`;
+`

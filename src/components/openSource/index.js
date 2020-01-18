@@ -18,7 +18,7 @@ import {
 
 import arrow from "../../assets/images/right-arrow-white.png"
 
-import text from '../../data/text.json'
+import text from "../../data/text.json"
 
 const OpenSource = () => {
   const data = useStaticQuery(graphql`
@@ -66,33 +66,45 @@ const OpenSource = () => {
         <Card bgColor="#3486fe">
           <ImageCard fluid={data.card_1.childImageSharp.fluid} />
           <TitleCard>{text.openSource.cards.card_1.title}</TitleCard>
-          <DescriptionCard>{text.openSource.cards.card_1.subtitle}</DescriptionCard>
+          <DescriptionCard>
+            {text.openSource.cards.card_1.subtitle}
+          </DescriptionCard>
           <ActionCard href="/#">
-            {text.openSource.cards.card_1.action} <img src={arrow} alt="arrow right" />
+            {text.openSource.cards.card_1.action}{" "}
+            <img src={arrow} alt="arrow right" />
           </ActionCard>
         </Card>
         <Card bgColor="#4937be" translate>
           <ImageCard fluid={data.card_2.childImageSharp.fluid} />
           <TitleCard>{text.openSource.cards.card_2.title}</TitleCard>
-          <DescriptionCard>{text.openSource.cards.card_2.subtitle}</DescriptionCard>
+          <DescriptionCard>
+            {text.openSource.cards.card_2.subtitle}
+          </DescriptionCard>
           <ActionCard href="/#">
-            {text.openSource.cards.card_2.action} <img src={arrow} alt="arrow right" />
+            {text.openSource.cards.card_2.action}{" "}
+            <img src={arrow} alt="arrow right" />
           </ActionCard>
         </Card>
         <Card bgColor="#3f7be6">
           <ImageCard fluid={data.card_3.childImageSharp.fluid} />
           <TitleCard>{text.openSource.cards.card_3.title}</TitleCard>
-          <DescriptionCard>{text.openSource.cards.card_3.subtitle}</DescriptionCard>
+          <DescriptionCard>
+            {text.openSource.cards.card_3.subtitle}
+          </DescriptionCard>
           <ActionCard href="/#">
-            {text.openSource.cards.card_3.action} <img src={arrow} alt="arrow right" />
+            {text.openSource.cards.card_3.action}{" "}
+            <img src={arrow} alt="arrow right" />
           </ActionCard>
         </Card>
         <Card bgColor="#01185d" translate>
           <ImageCard fluid={data.card_4.childImageSharp.fluid} />
           <TitleCard>{text.openSource.cards.card_4.title}</TitleCard>
-          <DescriptionCard>{text.openSource.cards.card_4.subtitle}</DescriptionCard>
+          <DescriptionCard>
+            {text.openSource.cards.card_4.subtitle}
+          </DescriptionCard>
           <ActionCard href="/#">
-            {text.openSource.cards.card_4.action} <img src={arrow} alt="arrow right" />
+            {text.openSource.cards.card_4.action}{" "}
+            <img src={arrow} alt="arrow right" />
           </ActionCard>
         </Card>
       </WrapperCard>

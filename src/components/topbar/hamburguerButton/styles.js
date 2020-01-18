@@ -18,7 +18,7 @@ export const Buttom = styled.button`
   align-items: flex-end;
 
   outline: none;
-   z-index: 1501;
+  z-index: 1501;
 
   cursor: pointer;
 `

@@ -11,18 +11,16 @@ export const Section = styled.section`
     url(${bgImageLeftB}) bottom left / 70px no-repeat,
     url(${bgImageRight}) 80% 100% / 70px no-repeat,
     url(${bgImageLeftB}) 80% 0% / 70px no-repeat,
-    url(${bgImageRightT}) 100% 60% / 100px no-repeat,
-    #2a84eb;   
+    url(${bgImageRightT}) 100% 60% / 100px no-repeat, #2a84eb;
 
   @media (min-width: 600px) {
     padding: 75px 0;
 
     background: url(${bgImageLeft}) top left / 100px no-repeat,
-        url(${bgImageLeftB}) bottom left / 150px no-repeat,
-        url(${bgImageLeftB}) 90% 0% / 200px no-repeat,
-        url(${bgImageRight}) 80% 100% / 100px no-repeat,
-        url(${bgImageRightT}) 100% 70% / 200px no-repeat,
-        #2a84eb ;
+      url(${bgImageLeftB}) bottom left / 150px no-repeat,
+      url(${bgImageLeftB}) 90% 0% / 200px no-repeat,
+      url(${bgImageRight}) 80% 100% / 100px no-repeat,
+      url(${bgImageRightT}) 100% 70% / 200px no-repeat, #2a84eb;
   }
 
   @media (min-width: 900px) {
@@ -72,7 +70,7 @@ export const Send = styled.button`
 `
 
 export const Input = styled.input`
-flex: 1;
+  flex: 1;
   background-color: transparent;
   border: none;
   color: #fff;
@@ -104,4 +102,4 @@ export const Form = styled.form`
   & > input {
     margin-right: 10px;
   }
-`;
+`

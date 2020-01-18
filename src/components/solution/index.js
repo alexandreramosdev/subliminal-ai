@@ -19,7 +19,7 @@ import {
   ActionCard,
 } from "./styles"
 
-import text from '../../data/text.json'
+import text from "../../data/text.json"
 
 import arrow from "../../assets/images/right-arrow-blue.png"
 import verifed from "../../assets/images/verified.png"
@@ -93,9 +93,12 @@ const Solution = () => {
                 {text.solution.cards.card_2.number}
               </NumberCard>
               <TitleCard>{text.solution.cards.card_2.title}</TitleCard>
-              <DescriptionCard>{text.solution.cards.card_2.description}</DescriptionCard>
+              <DescriptionCard>
+                {text.solution.cards.card_2.description}
+              </DescriptionCard>
               <ActionCard>
-                {text.solution.cards.card_2.action} <img src={arrow} alt="..." />
+                {text.solution.cards.card_2.action}{" "}
+                <img src={arrow} alt="..." />
               </ActionCard>
             </Card>
           </Col>
@@ -112,9 +115,12 @@ const Solution = () => {
                 {text.solution.cards.card_3.number}
               </NumberCard>
               <TitleCard>{text.solution.cards.card_3.title}</TitleCard>
-              <DescriptionCard>{text.solution.cards.card_3.description}</DescriptionCard>
+              <DescriptionCard>
+                {text.solution.cards.card_3.description}
+              </DescriptionCard>
               <ActionCard>
-                {text.solution.cards.card_3.action} <img src={arrow} alt="..." />
+                {text.solution.cards.card_3.action}{" "}
+                <img src={arrow} alt="..." />
               </ActionCard>
             </Card>
           </Col>

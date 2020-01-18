@@ -1,12 +1,12 @@
-import React from 'react';
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import text from '../../data/text.json'
+import text from "../../data/text.json"
 
-import { Layout, SEO, Trusted, Hero, CallTo } from '../../components'
-import WorkTogether from '../../components/workTogether'
-import DontLikeForm from '../../components/dontLikeForm'
-import LetsTalk from '../../components/letsTalk'
+import { Layout, SEO, Trusted, Hero, CallTo } from "../../components"
+import WorkTogether from "../../components/workTogether"
+import DontLikeForm from "../../components/dontLikeForm"
+import LetsTalk from "../../components/letsTalk"
 
 // import { Container } from './styles';
 
@@ -23,17 +23,17 @@ const Contact = ({ location }) => {
     }
   `)
   return (
-    <Layout bgColorTopbar='#fff6ef' >
+    <Layout bgColorTopbar="#fff6ef">
       <SEO title="Contact" />
       <Hero
         title={text.hero.title.contact}
         subTitle={text.hero.subtitle.contact}
         sourceImage={data.heroContact.childImageSharp.fluid}
-        bgColor='#fff6ef'
+        bgColor="#fff6ef"
         textAlignLeft
         smallImageNone
-        actionLink='https://calendly.com/kabirkhan/30min'
-        titleButton='Schedule A Call'
+        actionLink="https://calendly.com/kabirkhan/30min"
+        titleButton="Schedule A Call"
       />
       <LetsTalk />
 
@@ -51,6 +51,4 @@ const Contact = ({ location }) => {
   )
 }
 
-export default Contact;
-
-
+export default Contact

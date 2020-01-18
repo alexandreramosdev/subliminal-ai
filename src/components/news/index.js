@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import TinySlider from "tiny-slider-react"
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery } from "gatsby"
 
 import avatar from "../../assets/images/avatar.png"
 import arrowLong from "../../assets/images/arrow-long.svg"
@@ -23,10 +23,10 @@ import {
   Info,
   Time,
   Tag,
-  Controls
+  Controls,
 } from "./styles"
 
-import Card from '../card'
+import Card from "../card"
 
 const News = ({ title, subtitle }) => {
   const controlsRef = useRef(null)
@@ -61,7 +61,6 @@ const News = ({ title, subtitle }) => {
     }
   `)
 
-
   const settings = {
     items: 1,
     controls: false,
@@ -70,7 +69,6 @@ const News = ({ title, subtitle }) => {
     responsive: {
       600: {
         items: 2,
-
       },
     },
   }
@@ -79,22 +77,26 @@ const News = ({ title, subtitle }) => {
     <Section>
       <Wrapper>
         <Title>{title}</Title>
-        {subtitle && (
-          <Subtitle>{subtitle}</Subtitle>
-        )}
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
         <LinkTo to="/blog">
           Explore Blog <img src={arrow} alt="..." />
         </LinkTo>
       </Wrapper>
       <WrapperCarousel>
         <TinySlider settings={settings} ref={controlsRef}>
-          {data && data.allMarkdownRemark.edges.map(({ node }) => (
-            <Card
-              post={node.frontmatter}
-              slug={node.fields.slug}
-              key={String(node.frontmatter.date + Math.random().toString(36).substring(7))}
-            />
-          ))}
+          {data &&
+            data.allMarkdownRemark.edges.map(({ node }) => (
+              <Card
+                post={node.frontmatter}
+                slug={node.fields.slug}
+                key={String(
+                  node.frontmatter.date +
+                    Math.random()
+                      .toString(36)
+                      .substring(7)
+                )}
+              />
+            ))}
         </TinySlider>
         <Controls>
           <button type="button" onClick={() => onGoTo("prev")}>

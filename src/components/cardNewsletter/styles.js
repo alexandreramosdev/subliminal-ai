@@ -1,11 +1,16 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   width: 100%;
 `
 
 export const Content = styled.div`
-  background-image: linear-gradient(47deg, #005ec9 -64%, #003eba 34%, #2a84eb 128%);
+  background-image: linear-gradient(
+    47deg,
+    #005ec9 -64%,
+    #003eba 34%,
+    #2a84eb 128%
+  );
   border-radius: 20px;
   box-shadow: 0 0 5px rgba(209, 211, 214, 0.2);
   overflow: hidden;
@@ -21,7 +26,6 @@ export const HeaderCard = styled.img`
 export const TitleCard = styled.h4`
   color: #fff;
   font-size: 40px;
-
 `
 
 export const DescriptionCard = styled.p`
@@ -54,7 +58,7 @@ export const Send = styled.button`
 `
 
 export const Input = styled.input`
-flex: 1;
+  flex: 1;
   background-color: transparent;
   border: none;
   color: #fff;
@@ -86,4 +90,4 @@ export const Form = styled.form`
   & > input {
     margin-right: 10px;
   }
-`;
+`

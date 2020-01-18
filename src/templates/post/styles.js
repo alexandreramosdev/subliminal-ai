@@ -112,19 +112,18 @@ export const WrapperInfo = styled.div`
   padding: 20px 30px;
 
   @media (min-width: 600px) {
-    padding: 40px 30px;    
+    padding: 40px 30px;
   }
 
   @media (min-width: 900px) {
-    padding: 50px 80px;    
+    padding: 50px 80px;
   }
 
-   @media (min-width: 1200px) {
+  @media (min-width: 1200px) {
     max-width: 1250px;
-    padding: 50px 170px;    
-    border-radius: 30px 30px 0 0 ;
+    padding: 50px 170px;
+    border-radius: 30px 30px 0 0;
   }
-
 `
 export const Info = styled.div``
 export const InfoTitle = styled.p`
@@ -142,14 +141,14 @@ export const InfoTitle = styled.p`
 export const Media = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 15px;  
+  margin-bottom: 15px;
 `
 
 export const Avatar = styled.img`
   margin-bottom: 0;
   width: 12px;
   height: 12px;
-  border-radius: ${({ icon }) => icon ? '0' : "50%"};
+  border-radius: ${({ icon }) => (icon ? "0" : "50%")};
   overflow: hidden;
   margin-right: 4px;
 `
@@ -164,18 +163,17 @@ export const Name = styled.p`
 `
 
 export const SideShare = styled.div`
-
   & > * {
     display: block;
     margin-bottom: 12px;
   }
 
-   @media (min-width: 1200px) {
+  @media (min-width: 1200px) {
     position: absolute;
     top: 180px;
     left: 60px;
 
-    & > * {   
+    & > * {
       margin-bottom: 25px;
     }
   }

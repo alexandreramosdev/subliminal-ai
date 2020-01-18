@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react"
 
-import avatar from '../../assets/images/avatar.png'
+import avatar from "../../assets/images/avatar.png"
 
 import {
   Wrapper,
@@ -13,8 +13,8 @@ import {
   DescriptionCard,
   Media,
   Avatar,
-  Name
-} from './styles';
+  Name,
+} from "./styles"
 
 const Card = ({ post, slug }) => {
   const { title, date, description, category, hero, author } = post
@@ -26,12 +26,8 @@ const Card = ({ post, slug }) => {
         <Info>
           <Tag>{category} </Tag> <Time> {date}</Time>
         </Info>
-        <TitleCard>
-          {title}
-        </TitleCard>
-        <DescriptionCard>
-          {description}
-        </DescriptionCard>
+        <TitleCard>{title}</TitleCard>
+        <DescriptionCard>{description}</DescriptionCard>
         <Media>
           <Avatar src={avatar} />
           <Name>By {author}</Name>
@@ -39,6 +35,6 @@ const Card = ({ post, slug }) => {
       </Content>
     </Wrapper>
   )
-};
+}
 
-export default Card;
+export default Card

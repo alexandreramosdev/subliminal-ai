@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -24,10 +24,9 @@ export const TitleCard = styled.h4`
   text-align: center;
   line-height: 1.75;
 
-  @media (min-width: 600px){
-     font-size: 40px;
+  @media (min-width: 600px) {
+    font-size: 40px;
   }
-
 `
 
 export const Play = styled.a`
@@ -39,12 +38,11 @@ export const Play = styled.a`
   color: #fff;
   text-decoration: none;
 
-   @media (min-width: 600px){
-     font-size: 25px;
+  @media (min-width: 600px) {
+    font-size: 25px;
   }
 
-  &:first{
+  &:first {
     margin-right: 10px;
   }
 `
-

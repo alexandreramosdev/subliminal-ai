@@ -1,6 +1,6 @@
 import React from "react"
 
-import text from '../../data/text.json'
+import text from "../../data/text.json"
 
 import mouse from "../../assets/images/mouse.png"
 import companies from "../../assets/images/trusted.png"

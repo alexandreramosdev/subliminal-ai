@@ -3,7 +3,8 @@ import { Link as LinkGatsby } from "gatsby"
 import Img from "gatsby-image"
 
 export const Container = styled.div`
-  background-color: ${({ bgColorTopbar }) => bgColorTopbar ? bgColorTopbar : "#fff"};
+  background-color: ${({ bgColorTopbar }) =>
+    bgColorTopbar ? bgColorTopbar : "#fff"};
   margin-bottom: -1px;
 `
 

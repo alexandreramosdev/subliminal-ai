@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import { Wrapper as WrapperCard } from '../card/styles'
+import { Wrapper as WrapperCard } from "../card/styles"
 
 export const Section = styled.section`
   padding: 50px 0;

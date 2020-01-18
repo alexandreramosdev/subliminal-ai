@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import text from '../../data/text.json'
+import text from "../../data/text.json"
 import { InstagramIcon, Avatar, Row, Title } from "./styles"
 
 const Bio = () => {
@@ -21,9 +21,14 @@ const Bio = () => {
     <>
       <Title>{text.bio.title}</Title>
       <Row>
-        <Avatar fixed={data.avatar.childImageSharp.fixed} alt={text.bio.author} />
+        <Avatar
+          fixed={data.avatar.childImageSharp.fixed}
+          alt={text.bio.author}
+        />
         <div>
-          <h3>{text.bio.author} <InstagramIcon /></h3>
+          <h3>
+            {text.bio.author} <InstagramIcon />
+          </h3>
           <p>{text.bio.description}</p>
         </div>
       </Row>

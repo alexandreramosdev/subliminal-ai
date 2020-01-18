@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react"
 
-import { Section, Row, Col, Title, SubTitle, Card, FormTitle } from './styles';
+import { Section, Row, Col, Title, SubTitle, Card, FormTitle } from "./styles"
 
 const LetsTalk = () => (
   <Section>
@@ -21,7 +21,11 @@ const LetsTalk = () => (
 
             <label>
               <p> Tell me your Though</p>
-              <textarea name="message" placeholder="Enter Your message" rows='6' />
+              <textarea
+                name="message"
+                placeholder="Enter Your message"
+                rows="6"
+              />
             </label>
             <input type="submit" value="MAKE A SCHEDULE" />
           </form>
@@ -29,16 +33,22 @@ const LetsTalk = () => (
       </Col>
       <Col>
         <Title>Understand AI</Title>
-        <SubTitle>Learn which areas of your business can be improved with AI</SubTitle>
+        <SubTitle>
+          Learn which areas of your business can be improved with AI
+        </SubTitle>
 
         <Title>Get a Project Estimation</Title>
-        <SubTitle>Estimate the time and budget needed to develop a solution</SubTitle>
+        <SubTitle>
+          Estimate the time and budget needed to develop a solution
+        </SubTitle>
 
         <Title>Get to know</Title>
-        <SubTitle>Learn more about our team’s expertise and capabilities</SubTitle>
+        <SubTitle>
+          Learn more about our team’s expertise and capabilities
+        </SubTitle>
       </Col>
     </Row>
-  </Section >
-);
+  </Section>
+)
 
-export default LetsTalk;
+export default LetsTalk

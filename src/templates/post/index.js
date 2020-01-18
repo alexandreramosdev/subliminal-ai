@@ -1,16 +1,34 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Disqus, CommentCount } from "gatsby-plugin-disqus"
-import { FaRegBookmark, FaHeart } from "react-icons/fa";
-import { useMediaQuery } from 'react-responsive';
+import { FaRegBookmark, FaHeart } from "react-icons/fa"
+import { useMediaQuery } from "react-responsive"
 
-import text from '../../data/text.json'
+import text from "../../data/text.json"
 import {
-  Bio, Share, Layout, SEO, CallTo, News, Trusted
+  Bio,
+  Share,
+  Layout,
+  SEO,
+  CallTo,
+  News,
+  Trusted,
 } from "../../components"
 
 import {
-  Hero, Title, Category, ContentPost, Footer, Line, WrapperInfo, Info, InfoTitle, Media, Avatar, Name, SideShare
+  Hero,
+  Title,
+  Category,
+  ContentPost,
+  Footer,
+  Line,
+  WrapperInfo,
+  Info,
+  InfoTitle,
+  Media,
+  Avatar,
+  Name,
+  SideShare,
 } from "./styles"
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -58,34 +76,37 @@ const BlogPostTemplate = ({ data, location }) => {
             <Info>
               <InfoTitle>Author</InfoTitle>
               <Media>
-                <Avatar src={require('../../assets/images/avatar.png')} />
+                <Avatar src={require("../../assets/images/avatar.png")} />
                 <Name>By {author}</Name>
               </Media>
             </Info>
             <Info>
               <InfoTitle>Published</InfoTitle>
               <Media>
-                <Avatar icon src={require('../../assets/images/published.svg')} />
+                <Avatar
+                  icon
+                  src={require("../../assets/images/published.svg")}
+                />
                 <Name>{published}</Name>
               </Media>
             </Info>
             <Info>
               <InfoTitle>Comments</InfoTitle>
               <Media>
-                <Avatar icon src={require('../../assets/images/comments.svg')} />
+                <Avatar
+                  icon
+                  src={require("../../assets/images/comments.svg")}
+                />
                 <Name>
-                  <CommentCount config={disqusConfig} placeholder={'...'} />
+                  <CommentCount config={disqusConfig} placeholder={"..."} />
                 </Name>
               </Media>
             </Info>
-
           </WrapperInfo>
         </Hero>
         <ContentPost dangerouslySetInnerHTML={{ __html: post.html }} />
         <Footer>
-          <Share
-            socialConfig={socialConfig}
-          />
+          <Share socialConfig={socialConfig} />
           <Line />
           <Bio />
           <Line />
@@ -107,16 +128,16 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-        site {
-          siteMetadata {
-            title
-            siteUrl
-            social {
-              twitter
-            }
-          }
+    site {
+      siteMetadata {
+        title
+        siteUrl
+        social {
+          twitter
+        }
+      }
     }
-    markdownRemark(fields: {slug: {eq: $slug } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html
@@ -126,14 +147,14 @@ export const pageQuery = graphql`
         author
         category
         description
-          hero {
-            childImageSharp {
-              fluid {
-                src
-              }
+        hero {
+          childImageSharp {
+            fluid {
+              src
+            }
           }
+        }
       }
     }
   }
-}
 `

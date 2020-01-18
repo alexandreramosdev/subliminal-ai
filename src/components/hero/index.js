@@ -26,30 +26,31 @@ const Hero = ({
   titleButton,
 }) => {
   return (
-    <Header bgColor={bgColor} >
-      <WrapperHeadline >
+    <Header bgColor={bgColor}>
+      <WrapperHeadline>
         <Headline textAlignLeft={textAlignLeft}>
           <Title>{title}</Title>
           <SubTitle>{subTitle}</SubTitle>
         </Headline>
-        <Image
-          smallImageNone={smallImageNone}
-          fluid={sourceImage}
-        />
+        <Image smallImageNone={smallImageNone} fluid={sourceImage} />
       </WrapperHeadline>
-      {children ? children : (
+      {children ? (
+        children
+      ) : (
         <WrapperAction>
           <Button
             href={actionLink}
             responsive
-            bgShadow={bgColor ? bgColor : "#fff"}>
-            {titleButton}</Button>
+            bgShadow={bgColor ? bgColor : "#fff"}
+          >
+            {titleButton}
+          </Button>
           <Link href="/#">
             Subliminal AI Extended <img src={arrow} alt="arrow" />
           </Link>
         </WrapperAction>
       )}
-    </Header >
+    </Header>
   )
 }
 

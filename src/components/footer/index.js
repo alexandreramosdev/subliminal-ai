@@ -26,13 +26,13 @@ const services = [
   { to: "#", title: "NLP (Text Analysis)" },
   { to: "#", title: "Computer Vision" },
   { to: "#", title: "Data Analysis" },
-  { to: "#", title: "Software Development" }
+  { to: "#", title: "Software Development" },
 ]
 const companies = [
   { to: "#", title: "Our story" },
   { to: "#", title: "Press" },
   { to: "#", title: "Blog" },
-  { to: "#", title: "Careers" }
+  { to: "#", title: "Careers" },
 ]
 
 const Footer = () => (
@@ -42,13 +42,17 @@ const Footer = () => (
         <NavFooter>
           <Title>SERVICES</Title>
           {services.map(service => (
-            <LinkTo key={service.title} to={service.to}>{service.title}</LinkTo>
+            <LinkTo key={service.title} to={service.to}>
+              {service.title}
+            </LinkTo>
           ))}
         </NavFooter>
         <NavFooter>
           <Title>COMPANY</Title>
           {companies.map(company => (
-            <LinkTo key={company.title} to={company.to}>{company.title}</LinkTo>
+            <LinkTo key={company.title} to={company.to}>
+              {company.title}
+            </LinkTo>
           ))}
         </NavFooter>
       </WrapperNavFooter>
