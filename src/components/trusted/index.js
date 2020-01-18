@@ -5,6 +5,7 @@ import text from "../../data/text.json"
 import mouse from "../../assets/images/mouse.png"
 import companies from "../../assets/images/trusted.png"
 import companiesWhite from "../../assets/images/trusted-white.png"
+
 import { Section, Wrapper, Image, Anchor, Title } from "./styles"
 
 const Trusted = ({ light = false }) => {

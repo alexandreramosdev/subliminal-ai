@@ -1,7 +1,6 @@
 import React from "react"
 
 import arrow from "../../assets/images/arrow.svg"
-
 import Button from "../button"
 import {
   Header,

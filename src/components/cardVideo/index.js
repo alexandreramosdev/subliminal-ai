@@ -1,9 +1,5 @@
 import React, { useState } from "react"
-
 import { MdPlayCircleFilled } from "react-icons/md"
-
-import arrow from "../../assets/images/right-arrow-white.png"
-
 import { Wrapper, Content, HeaderCard, TitleCard, Play } from "./styles"
 
 const CardVideo = () => {

@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
 import arrow from "../../assets/images/right-arrow-white.png"
-
 import { Section, Wrapper, Title, Subtitle, Send, Input, Form } from "./styles"
 
 import text from "../../data/text.json"
