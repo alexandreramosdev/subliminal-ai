@@ -64,7 +64,7 @@ const Footer = () => (
         <Form>
           <EmailInput type="email" placeholder="Email Address…" />
           <Send type="submit">
-            Send <img src={arrow} />
+            Send <img src={arrow} alt='...' />
           </Send>
         </Form>
       </InTouch>
@@ -74,7 +74,7 @@ const Footer = () => (
       <Logo src={logo} />
       <Language>
         English <IconGlobe /> &nbsp;&nbsp;&nbsp;&nbsp; United State{" "}
-        <img src={require("../../assets/images/usa.svg")} />
+        <img src={require("../../assets/images/usa.svg")} alt='...' />
       </Language>
       <Copy>© 2020 Subliminal AI. All rights reserved</Copy>
     </FooterNote>

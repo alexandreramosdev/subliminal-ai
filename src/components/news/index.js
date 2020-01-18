@@ -78,19 +78,19 @@ const News = ({ title, subtitle }) => {
               slug={node.fields.slug}
               key={String(
                 node.frontmatter.date +
-                  Math.random()
-                    .toString(36)
-                    .substring(7)
+                Math.random()
+                  .toString(36)
+                  .substring(7)
               )}
             />
           ))}
         </TinySlider>
         <Controls>
           <button type="button" onClick={() => onGoTo("prev")}>
-            <img src={arrowLong} />
+            <img src={arrowLong} alt='...' />
           </button>
           <button type="button" onClick={() => onGoTo("next")}>
-            <img src={arrowLong} />
+            <img src={arrowLong} alt='...' />
           </button>
         </Controls>
       </WrapperCarousel>

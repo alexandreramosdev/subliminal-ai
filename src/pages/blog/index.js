@@ -310,9 +310,9 @@ const Blog = () => {
                   <CardNewsletter
                     key={String(
                       node.frontmatter.date +
-                        Math.random()
-                          .toString(36)
-                          .substring(7)
+                      Math.random()
+                        .toString(36)
+                        .substring(7)
                     )}
                   />
                 )
@@ -323,9 +323,9 @@ const Blog = () => {
                   <CardVideo
                     key={String(
                       node.frontmatter.date +
-                        Math.random()
-                          .toString(36)
-                          .substring(7)
+                      Math.random()
+                        .toString(36)
+                        .substring(7)
                     )}
                   />
                 )
@@ -337,9 +337,9 @@ const Blog = () => {
                     style={{ gridColumn: "1 / -1" }}
                     key={String(
                       node.frontmatter.date +
-                        Math.random()
-                          .toString(36)
-                          .substring(7)
+                      Math.random()
+                        .toString(36)
+                        .substring(7)
                     )}
                   >
                     <HeaderCustomer>
@@ -357,7 +357,9 @@ const Blog = () => {
                 )
               }
 
-              if (index >= 17) return
+              if (index >= 17) {
+                return null
+              }
 
               return (
                 <Card
@@ -365,9 +367,9 @@ const Blog = () => {
                   slug={node.fields.slug}
                   key={String(
                     node.frontmatter.date +
-                      Math.random()
-                        .toString(36)
-                        .substring(7)
+                    Math.random()
+                      .toString(36)
+                      .substring(7)
                   )}
                 />
               )

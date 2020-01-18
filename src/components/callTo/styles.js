@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 import bgImageLeft from "../../assets/images/background-index-4.svg"
 import bgImageRight from "../../assets/images/background-index-5.svg"
@@ -16,9 +16,9 @@ export const Section = styled.section`
     padding: 75px 0;
 
     background: ${({ isContactPage }) =>
-      isContactPage
-        ? "#fff"
-        : `url(${bgImageLeft}) top left / 100px no-repeat,
+    isContactPage
+      ? "#fff"
+      : `url(${bgImageLeft}) top left / 100px no-repeat,
         url(${bgImageRight}) bottom right / 100px no-repeat,
         linear-gradient(74deg, #005ec9 0%, #003eba 51%, #2a84eb 100%)`};
   }

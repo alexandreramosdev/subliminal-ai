@@ -89,10 +89,10 @@ const Testimonial = () => {
         </TinySlider>
         <Controls>
           <button type="button" onClick={() => onGoTo("prev")}>
-            <img src={arrowLong} />
+            <img src={arrowLong} alt='...' />
           </button>
           <button type="button" onClick={() => onGoTo("next")}>
-            <img src={arrowLong} />
+            <img src={arrowLong} alt='...' />
           </button>
         </Controls>
       </WrapperCarousel>
