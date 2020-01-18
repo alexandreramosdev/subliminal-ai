@@ -19,6 +19,8 @@ import {
   ActionCard,
 } from "./styles"
 
+import text from '../../data/text.json'
+
 import arrow from "../../assets/images/right-arrow-blue.png"
 import verifed from "../../assets/images/verified.png"
 import bgBackground_1 from "../../assets/images/background-index-1.png"
@@ -54,11 +56,8 @@ const Solution = () => {
   return (
     <Section>
       <WrapperHeader>
-        <Title>Solutions to common Machine Learning (ML) Problems</Title>
-        <Subtitle>
-          Simple step-by-step walkthroughs to solve common ML problems with
-          Subliminal Ai. Extended Is An End-to-end Platform
-        </Subtitle>
+        <Title>{text.solution.title}</Title>
+        <Subtitle>{text.solution.subtitle}</Subtitle>
       </WrapperHeader>
       <Row>
         <Wrapper reverse>
@@ -68,23 +67,16 @@ const Solution = () => {
           <Col>
             <Card>
               <NumberCard color="#c3c7f4" bgBackground={bgBackground_1}>
-                01
+                {text.solution.cards.card_1.number}
               </NumberCard>
-              <TitleCard>Data strategy and Understanding</TitleCard>
+              <TitleCard>{text.solution.cards.card_1.title}</TitleCard>
               <DescriptionCard>
-                For new customers, it's important for us to get a holistic
-                understanding of the data sources in your company, identify
-                what's useful now and what isn't and provide clarity on cleaning
-                up currently unusable data so it can be utilized in future
-                analysis.
+                {text.solution.cards.card_1.description}
               </DescriptionCard>
               <Line />
               <Media>
                 <img src={verifed} alt="..." />
-                <p>
-                  Output: Recommendations for multiple future projects that will
-                  directly impact the business bottom line.
-                </p>
+                <p>{text.solution.cards.card_1.output}</p>
               </Media>
             </Card>
           </Col>
@@ -98,19 +90,12 @@ const Solution = () => {
           <Col>
             <Card>
               <NumberCard color="#c1deff" bgBackground={bgBackground_2}>
-                02
+                {text.solution.cards.card_2.number}
               </NumberCard>
-              <TitleCard>
-                Identify the highest value project and build a proof of concept
-              </TitleCard>
-              <DescriptionCard>
-                Every AI problem is difficult to get right the first time. We
-                start by developing a good baseline model and solution that can
-                be improved on over time. This ensures that the business idea is
-                actually possible
-              </DescriptionCard>
+              <TitleCard>{text.solution.cards.card_2.title}</TitleCard>
+              <DescriptionCard>{text.solution.cards.card_2.description}</DescriptionCard>
               <ActionCard>
-                Subliminal AI Extended <img src={arrow} alt="..." />
+                {text.solution.cards.card_2.action} <img src={arrow} alt="..." />
               </ActionCard>
             </Card>
           </Col>
@@ -124,17 +109,12 @@ const Solution = () => {
           <Col>
             <Card>
               <NumberCard color="#fcdead" bgBackground={bgBackground_3}>
-                03
+                {text.solution.cards.card_3.number}
               </NumberCard>
-              <TitleCard>Move the proof of concept into production</TitleCard>
-              <DescriptionCard>
-                So we've ensured our idea will work and has potential, now is
-                the time to collect more data and improve the models we've
-                developed in the proof of concept so you know you can trust the
-                model to drive the most
-              </DescriptionCard>
+              <TitleCard>{text.solution.cards.card_3.title}</TitleCard>
+              <DescriptionCard>{text.solution.cards.card_3.description}</DescriptionCard>
               <ActionCard>
-                Subliminal AI Extended <img src={arrow} alt="..." />
+                {text.solution.cards.card_3.action} <img src={arrow} alt="..." />
               </ActionCard>
             </Card>
           </Col>

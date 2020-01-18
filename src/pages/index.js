@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import text from '../data/text.json'
+
 import {
   Layout,
   SEO,
@@ -31,8 +33,8 @@ const Index = () => {
       
       <SEO title="Home" />
       <Hero
-        title="Transform your business with Artificial Intelligence"
-        subTitle=" Subliminal AI is a Machine Learning Consulting firm experienced in applying AI and Machine Learning to business problems."
+        title={text.hero.title.home}
+        subTitle={text.hero.subtitle.home}
         sourceImage={data.heroHome.childImageSharp.fluid}
         actionLink='/contact'
         titleButton='Contact'
@@ -48,8 +50,8 @@ const Index = () => {
           to your inbox."
       />
       <CallTo
-        title="Got A Project Idea? let’s Have A Quick, 15-minute Call To"
-        subtitle="Find out how Data Science Consulting can help your business. Estimate the time and budget needed to develop a solution. Learn more about our expertise and capabilities."
+        title={text.callTo.title.default}
+        subtitle={text.callTo.subtitle.default}
         linkTitle="Learn About The Process"
       />
     </Layout>

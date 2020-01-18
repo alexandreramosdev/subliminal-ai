@@ -12,6 +12,8 @@ import {
   Form
 } from "./styles"
 
+import text from '../../data/text.json'
+
 const Newsletter = () => {
   const [email, setEmail] = useState('')
 
@@ -26,19 +28,15 @@ const Newsletter = () => {
   return (
     <Section >
       <Wrapper>
-        <Title >
-          Sign Up For Our Newsletter.
-        </Title>
-        <Subtitle >
-          Monthly hand-picked discoveries and stories of thriving in a new world of design. GIFs (often) included.
-        </Subtitle>
+        <Title >{text.newsletter.title}</Title>
+        <Subtitle >{text.newsletter.subtitle}</Subtitle>
         <Form onSubmit={submit}>
           <Input
             type="text"
             placeholder='Email Address...'
             value={email}
             onChange={(e) => setEmail(e.target.value)} />
-          <Send >Send <img src={arrow} alt="..." /></Send>
+          <Send >{text.newsletter.action} <img src={arrow} alt="..." /></Send>
         </Form>
       </Wrapper>
     </Section >

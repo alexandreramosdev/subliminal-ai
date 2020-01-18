@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+import { Wrapper as WrapperCard } from '../card/styles'
+
 export const Section = styled.section`
   padding: 50px 0;
   background: #f9fbff;
@@ -80,6 +82,15 @@ export const WrapperCarousel = styled.div`
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 50px 50px;
+  }
+
+  & ${WrapperCard} {
+    padding: 20px;
+    height: 100%;
+
+    & > div {
+      align-items: stretch;
+    }
   }
 `
 

@@ -13,6 +13,8 @@ import {
   Form
 } from './styles';
 
+import text from '../../data/text.json'
+
 const CardNewsletter = () => {
   const [email, setEmail] = useState('')
 
@@ -29,12 +31,8 @@ const CardNewsletter = () => {
       <Content>
         <HeaderCard src={require("../../assets/images/send.svg")} />
 
-        <TitleCard>
-          Sign Up For Our Newsletter
-      </TitleCard>
-        <DescriptionCard>
-          Monthly hand-picked discoveries and stories of thriving in a new world of design. GIFs (often) included.
-      </DescriptionCard>
+        <TitleCard>{text.cardNewsletter.title}</TitleCard>
+        <DescriptionCard>{text.cardNewsletter.description}</DescriptionCard>
 
         <Form onSubmit={submit}>
           <Input

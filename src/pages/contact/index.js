@@ -1,6 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from "gatsby";
 
+import text from '../../data/text.json'
+
 import { Layout, SEO, Trusted, Hero, CallTo } from '../../components'
 import WorkTogether from '../../components/workTogether'
 import DontLikeForm from '../../components/dontLikeForm'
@@ -24,8 +26,8 @@ const Contact = ({ location }) => {
     <Layout bgColorTopbar='#fff6ef' >
       <SEO title="Contact" />
       <Hero
-        title="Let’s Talk About AI, Schedule a call with an AI Expert"
-        subTitle="Have a project in mind? Or just curious about AI? Let’s connect to discuss your needs and determine if AI is a fit for your use case."
+        title={text.hero.title.contact}
+        subTitle={text.hero.subtitle.contact}
         sourceImage={data.heroContact.childImageSharp.fluid}
         bgColor='#fff6ef'
         textAlignLeft
@@ -37,8 +39,8 @@ const Contact = ({ location }) => {
 
       <CallTo
         isContactPage
-        title="Schedule A 15-min Call With An Ai Expert"
-        subtitle="Have a project in mind? Or just curious about AI? Let’s connect to discuss your needs and determine if AI is a fit for your use case."
+        title={text.callTo.title.home}
+        subtitle={text.callTo.subtitle.home}
         linkTitle="Chat with us"
       />
 

@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import TinySlider from "tiny-slider-react"
+import { useStaticQuery } from 'gatsby'
 
 import avatar from "../../assets/images/avatar.png"
 import arrowLong from "../../assets/images/arrow-long.svg"
@@ -10,7 +11,7 @@ import {
   Title,
   Subtitle,
   WrapperCarousel,
-  Card,
+  // Card,
   HeaderCard,
   TitleCard,
   Media,
@@ -18,39 +19,58 @@ import {
   Name,
   DescriptionCard,
   Content,
-  Controls,
   LinkTo,
   Info,
   Time,
   Tag,
+  Controls
 } from "./styles"
+
+import Card from '../card'
 
 const News = ({ title, subtitle }) => {
   const controlsRef = useRef(null)
-
   const onGoTo = dir => controlsRef.current.slider.goTo(dir)
 
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        edges {
+          node {
+            excerpt
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              description
+              category
+              author
+              hero {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+
   const settings = {
-    items: 2,
-    gutter: 20,
-    center: true,
+    items: 1,
     controls: false,
-    fixedWidth: 260,
     nav: false,
-    edgePadding: 20,
     wrapAround: false,
     responsive: {
       600: {
         items: 2,
-        fixedWidth: 380,
-      },
-      900: {
-        fixedWidth: 488,
-        gutter: 10,
-      },
-      1200: {
-        fixedWidth: 588,
-        gutter: 10,
+
       },
     },
   }
@@ -60,9 +80,7 @@ const News = ({ title, subtitle }) => {
       <Wrapper>
         <Title>{title}</Title>
         {subtitle && (
-          <Subtitle>
-            {subtitle}
-          </Subtitle>
+          <Subtitle>{subtitle}</Subtitle>
         )}
         <LinkTo to="/blog">
           Explore Blog <img src={arrow} alt="..." />
@@ -70,61 +88,22 @@ const News = ({ title, subtitle }) => {
       </Wrapper>
       <WrapperCarousel>
         <TinySlider settings={settings} ref={controlsRef}>
-          <Card>
-            <Content>
-              <HeaderCard
-                src={require("../../assets/images/news_1.png")}
-              ></HeaderCard>
-              <Info>
-                <Tag>Marketing </Tag> <Time> Mar 09, 2019</Time>
-              </Info>
-              <TitleCard>
-                Deep Learning Chatbot – Analysis and Implementation
-              </TitleCard>
-              <DescriptionCard>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco
-              </DescriptionCard>
-              <Media>
-                <Avatar src={avatar} />
-
-                <Name>By Ghani Pradita</Name>
-              </Media>
-            </Content>
-          </Card>
-          <Card>
-            <Content>
-              <HeaderCard
-                src={require("../../assets/images/news_2.png")}
-              ></HeaderCard>
-              <Info>
-                <Tag>Marketing </Tag> <Time> Mar 09, 2019</Time>
-              </Info>
-              <TitleCard>
-                Deep Learning Chatbot – Analysis and Implementation
-              </TitleCard>
-              <DescriptionCard>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco
-              </DescriptionCard>
-              <Media>
-                <Avatar src={avatar} />
-
-                <Name>By Ghani Pradita</Name>
-              </Media>
-            </Content>
-          </Card>
+          {data && data.allMarkdownRemark.edges.map(({ node }) => (
+            <Card
+              post={node.frontmatter}
+              slug={node.fields.slug}
+              key={String(node.frontmatter.date + Math.random().toString(36).substring(7))}
+            />
+          ))}
         </TinySlider>
-        {/* <Controls>
+        <Controls>
           <button type="button" onClick={() => onGoTo("prev")}>
             <img src={arrowLong} />
           </button>
           <button type="button" onClick={() => onGoTo("next")}>
             <img src={arrowLong} />
           </button>
-        </Controls> */}
+        </Controls>
       </WrapperCarousel>
     </Section>
   )

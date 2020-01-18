@@ -4,8 +4,7 @@ import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 import { FaRegBookmark, FaHeart } from "react-icons/fa";
 import { useMediaQuery } from 'react-responsive';
 
-
-
+import text from '../../data/text.json'
 import {
   Bio, Share, Layout, SEO, CallTo, News, Trusted
 } from "../../components"
@@ -14,7 +13,7 @@ import {
   Hero, Title, Category, ContentPost, Footer, Line, WrapperInfo, Info, InfoTitle, Media, Avatar, Name, SideShare
 } from "./styles"
 
-const BlogPostTemplate = ({ data, location, pageContext }) => {
+const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteUrl = data.site.siteMetadata.siteUrl
   const siteTitle = data.site.siteMetadata.title
@@ -23,7 +22,6 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
   const published = post.frontmatter.date
   const author = post.frontmatter.author
   const category = post.frontmatter.category
-  // const { previous, next } = pageContext
   const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" })
 
   const disqusConfig = {
@@ -97,8 +95,8 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
       <News title="Read Similar Post" />
       <Trusted light />
       <CallTo
-        title="Got A Project Idea? let’s Have A Quick, 15-minute Call To"
-        subtitle="Find out how Data Science Consulting can help your business. Estimate the time and budget needed to develop a solution. Learn more about our expertise and capabilities."
+        title={text.callTo.title.default}
+        subtitle={text.callTo.subtitle.default}
         linkTitle="Learn About The Process"
       />
     </Layout>

@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import text from '../../data/text.json'
 import { InstagramIcon, Avatar, Row, Title } from "./styles"
 
 const Bio = () => {
@@ -13,33 +14,17 @@ const Bio = () => {
           }
         }
       }
-      site {
-        siteMetadata {
-          author
-          social {
-            twitter
-          }
-        }
-      }
     }
   `)
 
-  const { author } = data.site.siteMetadata
   return (
     <>
-      <Title>ABOUT THE AUTHOR</Title>
+      <Title>{text.bio.title}</Title>
       <Row>
-        <Avatar fixed={data.avatar.childImageSharp.fixed} alt={author} />
+        <Avatar fixed={data.avatar.childImageSharp.fixed} alt={text.bio.author} />
         <div>
-          <h3>
-            Emily Marsh <InstagramIcon />
-          </h3>
-          <p>
-            Emily is an Inbound Marketer for Iconosquare, based in the Limoges
-            office. She loves all things social and revels in keeping on top of
-            the social media marketing game by writing for the blog. She’s also
-            a bit obsessed with sushi and Netflix.
-          </p>
+          <h3>{text.bio.author} <InstagramIcon /></h3>
+          <p>{text.bio.description}</p>
         </div>
       </Row>
     </>

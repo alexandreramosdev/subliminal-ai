@@ -22,23 +22,34 @@ import {
   IconGlobe,
 } from "./styles"
 
+const services = [
+  { to: "#", title: "NLP (Text Analysis)" },
+  { to: "#", title: "Computer Vision" },
+  { to: "#", title: "Data Analysis" },
+  { to: "#", title: "Software Development" }
+]
+const companies = [
+  { to: "#", title: "Our story" },
+  { to: "#", title: "Press" },
+  { to: "#", title: "Blog" },
+  { to: "#", title: "Careers" }
+]
+
 const Footer = () => (
   <ContainerFooter>
     <Wrapper>
       <WrapperNavFooter>
         <NavFooter>
           <Title>SERVICES</Title>
-          <LinkTo to="#">NLP (Text Analysis)</LinkTo>
-          <LinkTo to="#">Computer Vision</LinkTo>
-          <LinkTo to="#">Data Analysis</LinkTo>
-          <LinkTo to="#">Software Development</LinkTo>
+          {services.map(service => (
+            <LinkTo key={service.title} to={service.to}>{service.title}</LinkTo>
+          ))}
         </NavFooter>
         <NavFooter>
           <Title>COMPANY</Title>
-          <LinkTo to="#">Our story</LinkTo>
-          <LinkTo to="#">Press</LinkTo>
-          <LinkTo to="#">Blog</LinkTo>
-          <LinkTo to="#">Careers</LinkTo>
+          {companies.map(company => (
+            <LinkTo key={company.title} to={company.to}>{company.title}</LinkTo>
+          ))}
         </NavFooter>
       </WrapperNavFooter>
       <InTouch>

@@ -19,7 +19,6 @@ import {
 const Card = ({ post, slug }) => {
   const { title, date, description, category, hero, author } = post
 
-  console.log(post)
   return (
     <Wrapper>
       <Content href={slug}>

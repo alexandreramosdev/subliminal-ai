@@ -1,6 +1,8 @@
 import React, { useRef } from "react"
 import TinySlider from "tiny-slider-react"
 
+import text from '../../data/text.json'
+
 import avatar from "../../assets/images/avatar.png"
 import arrowLong from "../../assets/images/arrow-long.svg"
 import {
@@ -24,7 +26,6 @@ import {
 
 const Testimonial = () => {
   const controlsRef = useRef(null)
-
   const onGoTo = dir => controlsRef.current.slider.goTo(dir)
 
   const settings = {
@@ -62,86 +63,32 @@ const Testimonial = () => {
       </Wrapper>
       <WrapperCarousel>
         <TinySlider settings={settings} ref={controlsRef}>
-          <Card>
-            <Content>
-              <Media>
-                <Avatar src={avatar} />
-                <User>
-                  <Name>Jon Snow</Name>
-                  <Office>
-                    Founder & CEO <a href="/#">@Tonquin</a>
-                  </Office>
-                </User>
-              </Media>
-              <DescriptionCard>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco
-              </DescriptionCard>
-              <Stars>
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon />
-                <span> 4.5 / 5</span>
-              </Stars>
-            </Content>
-          </Card>
-
-          <Card>
-            <Content>
-              <Media>
-                <Avatar src={avatar} />
-                <User>
-                  <Name>Jon Snow</Name>
-                  <Office>
-                    Founder & CEO <a href="/#">@Tonquin</a>
-                  </Office>
-                </User>
-              </Media>
-              <DescriptionCard>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco
-              </DescriptionCard>
-              <Stars>
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon />
-                <span> 4.5 / 5</span>
-              </Stars>
-            </Content>
-          </Card>
-
-          <Card>
-            <Content>
-              <Media>
-                <Avatar src={avatar} />
-                <User>
-                  <Name>Jon Snow</Name>
-                  <Office>
-                    Founder & CEO <a href="/#">@Tonquin</a>
-                  </Office>
-                </User>
-              </Media>
-              <DescriptionCard>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco
-              </DescriptionCard>
-              <Stars>
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon selected />
-                <StarIcon />
-                <span> 4.5 / 5</span>
-              </Stars>
-            </Content>
-          </Card>
+          {text.testimonial.cards && text.testimonial.cards.map(card => (
+            <Card key={card.id}>
+              <Content>
+                <Media>
+                  <Avatar src={avatar} />
+                  <User>
+                    <Name>{card.name}</Name>
+                    <Office>
+                      {card.office}
+                    </Office>
+                  </User>
+                </Media>
+                <DescriptionCard>
+                  {card.description}
+                </DescriptionCard>
+                <Stars>
+                  <StarIcon selected />
+                  <StarIcon selected />
+                  <StarIcon selected />
+                  <StarIcon selected />
+                  <StarIcon />
+                  <span> 4.5 / 5</span>
+                </Stars>
+              </Content>
+            </Card>
+          ))}
         </TinySlider>
         <Controls>
           <button type="button" onClick={() => onGoTo("prev")}>

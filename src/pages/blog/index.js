@@ -8,6 +8,7 @@ import {
   Layout, CallTo, Trusted, Card, Hero, Newsletter, Button, CardNewsletter, CardVideo
 } from "../../components"
 
+import text from '../../data/text.json'
 
 import { Wrapper as WrapperCard } from '../../components/card/styles'
 import { Wrapper as WrapperCardNewsletter } from '../../components/cardNewsletter/styles'
@@ -223,8 +224,7 @@ const Square = styled.span`
 
 const categories = ["Community", "Culture", "Design", "Developer", "Engineering", "Marketplace", "News", "Product Updates"]
 
-const Blog = ({ allMarkdownRemark }) => {
-  console.log(allMarkdownRemark)
+const Blog = () => {
   const data = useStaticQuery(graphql`
     query {
       heroBlog: file(absolutePath: { regex: "/hero-blog.png/" }) {
@@ -261,13 +261,11 @@ const Blog = ({ allMarkdownRemark }) => {
     }
   `)
 
-  console.log(data)
-
   return (
     <Layout bgColorTopbar='#9ce3ff'>
       <Hero
-        title="Be Part Of The Machine Learning Revolution."
-        subTitle="The future of design is open. We’re building it. Stories, news, and tips from behind the artboards."
+        title={text.hero.title.blog}
+        subTitle={text.hero.subtitle.blog}
         sourceImage={data.heroBlog.childImageSharp.fluid}
         bgColor='#9ce3ff'
         smallImageNone
@@ -349,8 +347,8 @@ const Blog = ({ allMarkdownRemark }) => {
       <Newsletter />
       <Trusted light />
       <CallTo
-        title="Got A Project Idea? let’s Have A Quick, 15-minute Call To"
-        subtitle="Find out how Data Science Consulting can help your business. Estimate the time and budget needed to develop a solution. Learn more about our expertise and capabilities."
+        title={text.callTo.title.default}
+        subtitle={text.callTo.subtitle.default}
         linkTitle="Learn About The Process"
       />
     </Layout>
