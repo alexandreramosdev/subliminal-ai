@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import TinySlider from "tiny-slider-react"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Card from "../card"
 
