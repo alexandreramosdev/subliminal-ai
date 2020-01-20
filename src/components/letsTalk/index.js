@@ -7,7 +7,8 @@ const LetsTalk = () => (
     <Row>
       <Col>
         <Card>
-          <form>
+          <form name="Let's talk" method="POST" data-netlify="true">
+            <input type='hidden' name='form-name' value="Let' s talk" />
             <FormTitle>Let’s talk!</FormTitle>
             <label>
               <p>Full Name</p>
