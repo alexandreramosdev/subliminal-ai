@@ -7,8 +7,14 @@ const LetsTalk = () => (
     <Row>
       <Col>
         <Card>
-          <form name="Let's talk" method="POST" data-netlify="true">
-            {/* <input type='hidden' name='form-name' value="Let's talk" /> */}
+
+          <form
+            name="LetsTalk"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type='hidden' name='form-name' value="LetsTalk" />
             <FormTitle>Let’s talk!</FormTitle>
             <label>
               <p>Full Name</p>
