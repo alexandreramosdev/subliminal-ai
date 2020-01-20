@@ -8,7 +8,7 @@ const LetsTalk = () => (
       <Col>
         <Card>
           <form name="Let's talk" method="POST" data-netlify="true">
-            <input type='hidden' name='form-name' value="Let' s talk" />
+            {/* <input type='hidden' name='form-name' value="Let's talk" /> */}
             <FormTitle>Let’s talk!</FormTitle>
             <label>
               <p>Full Name</p>
@@ -28,7 +28,7 @@ const LetsTalk = () => (
                 rows="6"
               />
             </label>
-            <input type="submit" value="MAKE A SCHEDULE" />
+            <button type="submit">MAKE A SCHEDULE</button>
           </form>
         </Card>
       </Col>

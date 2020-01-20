@@ -82,11 +82,13 @@ export const Card = styled.div`
     }
   }
 
-  & input[type="submit"] {
+  & input[type="submit"],
+  & button[type="submit"] {
     background-color: #2a84eb;
     border: none;
     color: #fff;
     padding: 10px;
+    width: 100%;
 
     &:hover {
       background-color: #2a84eb;
