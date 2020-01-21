@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 import arrow from "../../assets/images/right-arrow-white.png"
 import { Section, Wrapper, Title, Subtitle, Send, Input, Form } from "./styles"
