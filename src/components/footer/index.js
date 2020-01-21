@@ -68,7 +68,7 @@ const Footer = () => (
           method="POST"
           data-netlify="true" >
           <input type='hidden' name='form-name' value="MailingList" />
-          <EmailInput type="email" placeholder="Email Address…" />
+          <EmailInput type="email" name='email' placeholder="Email Address…" />
           <Send type="submit">
             Send <img src={arrow} alt='...' />
           </Send>
