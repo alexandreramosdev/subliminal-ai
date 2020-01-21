@@ -117,5 +117,11 @@
   "cardNewsletter": {
     "title": "Sign Up For Our Newsletter",
     "description": " Monthly hand-picked discoveries and stories of thriving in a new world of design. GIFs (often) included."
+  },
+  "footer": {
+    "inTouch": {
+      "title": "STAU IN TOUCH",
+      "description": "Join our Mailing list to get updates.We respect your privacy"
+    }
   }
 }

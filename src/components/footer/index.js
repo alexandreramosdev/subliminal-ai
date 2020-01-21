@@ -22,6 +22,8 @@ import {
   IconGlobe,
 } from "./styles"
 
+import text from '../../data/text.json'
+
 const services = [
   { to: "#", title: "NLP (Text Analysis)" },
   { to: "#", title: "Computer Vision" },
@@ -34,6 +36,8 @@ const companies = [
   { to: "#", title: "Blog" },
   { to: "#", title: "Careers" },
 ]
+
+
 
 const Footer = () => (
   <ContainerFooter>
@@ -57,11 +61,13 @@ const Footer = () => (
         </NavFooter>
       </WrapperNavFooter>
       <InTouch>
-        <TitleForm>STAU IN TOUCH</TitleForm>
-        <DescriptionForm>
-          Join our Mailing list to get updates.We respect your privacy
-        </DescriptionForm>
-        <Form>
+        <TitleForm>{text.footer.inTouch.title}</TitleForm>
+        <DescriptionForm>{text.footer.inTouch.description}</DescriptionForm>
+        <Form
+          name="MailingList"
+          method="POST"
+          data-netlify="true" >
+          <input type='hidden' name='form-name' value="MailingList" />
           <EmailInput type="email" placeholder="Email Address…" />
           <Send type="submit">
             Send <img src={arrow} alt='...' />
