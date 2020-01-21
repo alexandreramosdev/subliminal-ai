@@ -17,9 +17,9 @@ const Newsletter = () => {
           data-netlify="true" >
           <input type='hidden' name='form-name' value="newsletter" />
           <Input
-            type="text"
+            type="email"
             placeholder="Email Address..."
-            name="name"
+            name="email"
           />
           <Send type='submit'>
             {text.newsletter.action} <img src={arrow} alt="..." />
