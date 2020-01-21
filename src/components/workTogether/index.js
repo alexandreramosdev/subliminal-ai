@@ -42,7 +42,7 @@ const WorkTogether = () => {
           {text.workTogether.agreement}
         </Agreement>
         <WrapperButtons>
-          <Button responsive bgShadow="#003eba" type='submit'>
+          <Button responsive bgShadow="#003eba" type='submit' as='button'>
             {text.workTogether.button}
           </Button>
         </WrapperButtons>
