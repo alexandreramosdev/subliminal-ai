@@ -14,44 +14,35 @@ import {
 } from "./styles"
 
 const WorkTogether = () => {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [company, setCompany] = useState("")
-
-  const handleChange = (e, func) => {
-    return func(e.target.value)
-  }
   return (
     <Section>
-      <Wrapper>
+      <Wrapper as='form' >
+        <input type='hidden' name='form-name' value="LetsTalk" />
         <Title>{text.workTogether.title}</Title>
         <Subtitle>
           Hello, I’m{" "}
           <Input
             placeholder="your Name"
-            value={name}
-            onChange={e => handleChange(e, setName)}
+            name="name"
           />{" "}
           and I work for{" "}
           <Input
             placeholder="Company Name"
-            value={company}
-            onChange={e => handleChange(e, setCompany)}
+            name="company"
           />{" "}
           We’d like to dev our applications. you can reach us at my{" "}
           <Input
             placeholder="Email Address"
-            value={email}
-            onChange={e => handleChange(e, setEmail)}
+            name="email"
           />{" "}
           to chat & schedule a call
         </Subtitle>
         <Agreement>
-          <input type="checkbox" />
+          <input type="checkbox" name="agreement" />
           {text.workTogether.agreement}
         </Agreement>
         <WrapperButtons>
-          <Button responsive bgShadow="#003eba">
+          <Button responsive bgShadow="#003eba" type='submit'>
             {text.workTogether.button}
           </Button>
         </WrapperButtons>
