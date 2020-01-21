@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 import arrow from "../../assets/images/right-arrow-white.png"
 
@@ -16,16 +16,6 @@ import {
 import text from "../../data/text.json"
 
 const CardNewsletter = () => {
-  const [email, setEmail] = useState("")
-
-  const submit = e => {
-    e.preventDefault()
-    console.log(email)
-    setEmail("Sending ...")
-
-    setTimeout(() => setEmail(""), 1000)
-  }
-
   return (
     <Wrapper>
       <Content>
@@ -34,14 +24,16 @@ const CardNewsletter = () => {
         <TitleCard>{text.cardNewsletter.title}</TitleCard>
         <DescriptionCard>{text.cardNewsletter.description}</DescriptionCard>
 
-        <Form onSubmit={submit}>
+        <Form name="newsletter"
+          method="POST"
+          data-netlify="true" >
+          <input type='hidden' name='form-name' value="newsletter" />
           <Input
-            type="text"
+            type="email"
             placeholder="Email Address..."
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+            name="email"
           />
-          <Send>
+          <Send type="submit">
             Send <img src={arrow} alt="..." />
           </Send>
         </Form>

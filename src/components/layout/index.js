@@ -6,7 +6,6 @@ import Footer from "../footer"
 import GlobalStyles from "../../styles/globalStyles"
 
 const Layout = ({ children, bgColorTopbar }) => {
-  console.log(bgColorTopbar)
   return (
     <>
       <Topbar bgColorTopbar={bgColorTopbar} />
