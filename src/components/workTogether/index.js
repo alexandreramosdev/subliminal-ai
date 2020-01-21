@@ -16,8 +16,11 @@ import {
 const WorkTogether = () => {
   return (
     <Section>
-      <Wrapper as='form' >
-        <input type='hidden' name='form-name' value="LetsTalk" />
+      <Wrapper as='form'
+        name="WorkTogether"
+        method="POST"
+        data-netlify="true" >
+        <input type='hidden' name='form-name' value="WorkTogether" />
         <Title>{text.workTogether.title}</Title>
         <Subtitle>
           Hello, I’m{" "}
