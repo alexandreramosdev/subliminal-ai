@@ -1,77 +1,57 @@
-<p align="center">
-
-<h1 align="center">
-  Subliminal Ai
-</h1>
+## 🚀 Subliminal AI: Site Estático de Consultoria (Front-end Performático)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c05af077-1c7d-418c-8364-bc797af667fa/deploy-status)](https://app.netlify.com/sites/preview-subliminal-ai/deploys)
+[![Linguagem Principal: JavaScript](https://img.shields.io/badge/Linguagem%20Principal-JavaScript-yellow.svg)](https://github.com/alexandreramosdev/subliminal-ai)
 
-## 🚀 Quick start
+***
 
-1.  **Start developing.**
+### 🎯 Destaque Front-end para Recrutadores
 
-    Start it up.
+Este projeto é uma **prova de conceito** de um website profissional desenvolvido para uma consultoria de Machine Learning, com foco em **performance, arquitetura moderna (JAMstack) e qualidade de código Front-end**.
 
-    ```shell
-    gatsby develop
-    ```
+* **Performance (SEO/Velocidade):** O uso de **Gatsby (React + GraphQL)** como Gerador de Site Estático (SSG) garante que todas as páginas sejam geradas como HTML puro em *build-time*, resultando em tempos de carregamento (TTFB) e *Time to Interactive* **quase instantâneos**.
+* **UI/UX e Responsividade:** Demonstra a habilidade em traduzir um *design* (arquivos de *sketch* disponíveis no repositório original) em uma interface de usuário **fluida e 100% responsiva**, com uma navegação limpa e intuitiva.
+* **Modularidade e Manutenção:** Arquitetura baseada em **Componentes React** e **JavaScript modular**, promovendo a reutilização de código e a fácil manutenção de grande escala.
 
-1.  **Open the source code and start editing!**
+---
 
-    Your site is now running at `http://localhost:8000`!
+### 🛠️ Stack Tecnológica e Habilidades Técnicas
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+Este projeto solidifica a proficiência nas seguintes ferramentas e conceitos modernos de desenvolvimento Front-end:
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+| Categoria | Tecnologia | Habilidade Demonstrada |
+| :--- | :--- | :--- |
+| **Framework UI** | **React** | Criação de componentes funcionais, gestão de estado e integração de dados. |
+| **Gerador Estático** | **Gatsby.js (SSG)** | Configuração e otimização de *builds*, geração de páginas estáticas e alto desempenho. |
+| **Dados** | **GraphQL** | Uso do *plugin* Gatsby para *query* eficiente de dados internos e externos. |
+| **Linguagem** | **JavaScript (ES6+)** | Lógica Front-end moderna, manipulação de DOM e otimização de *bundle*. |
+| **Estilização** | **CSS-in-JS ou CSS Modules** | Estilização isolada por componente, manutenção de estilos e design system. |
+| **Deploy & CI/CD** | **Netlify** | Configuração de *deploys* automáticos, integração contínua e *split testing*. |
 
-## 🧐 What's inside?
+---
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+### 🏗️ Arquitetura e Estrutura do Código
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+O repositório segue a convenção de projetos Gatsby, garantindo clareza e separação de responsabilidades:
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+* **`/src/components`**: Contém todos os componentes React reutilizáveis (e.g., cabeçalho, *cards*, rodapé) para máxima modularidade.
+* **`/src/pages`**: Lógica de roteamento e *layouts* de páginas principais da aplicação.
+* **`/gatsby-config.js`**: Demonstra a experiência na configuração de *plugins* e *metadata* para otimização (e.g., *sitemap*, manifest, otimização de imagens).
+* **Performance Tática:** Implementação de técnicas como **Pré-carregamento Inteligente** (nativo do Gatsby) e otimização de imagens para *lazy loading*.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+---
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+### 🔗 Acesso e Configuração
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+| Recurso | URL |
+| :--- | :--- |
+| **Live Demo (Preview)** | [https://preview-subliminal-ai.netlify.app/](https://preview-subliminal-ai.netlify.app/) |
+| **Repositório GitHub** | [https://github.com/alexandreramosdev/subliminal-ai](https://github.com/alexandreramosdev/subliminal-ai) |
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+#### Como executar localmente:
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+1.  **Clonar:** `git clone https://github.com/alexandreramosdev/subliminal-ai.git`
+2.  **Instalar dependências:** `cd subliminal-ai && yarn install`
+3.  **Desenvolvimento:** `gatsby develop` (Abre o site em `http://localhost:8000`)
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-10. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-11. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## sketch
-
-https://www.dropbox.com/s/c1bjbl276f13ugv/design%20files.zip?dl=0
+***
